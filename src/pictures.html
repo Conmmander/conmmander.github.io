@@ -5,7 +5,7 @@
         <script>
             let programmingInstance = [["./pictures/mySite.PNG", "A snippet from this website."], ["./pictures/pythonBadges.PNG", "Though relatively new to Python, I can understand the basics of the language. This is a picture of various CodeHS badges I've earned for Python."], ["./pictures/nexus2Bot.png", "This is a picture of a Discord Bot I programmed. It's entirely in JavaScript using Node.JS. It's by far my best project. The source code to it can be found in the Projects tab."], ["./pictures/diagramOrigin2.png", "This is a diagram of a game I was working on in ROBLOX. It shows some code flow that I felt would make sense, and how to manage stagefulness of things on the server and client."]]
             let programmingIndex = 0
-            const proPictureLeft = () => {
+            const progPictureLeft = () => {
                 if (programmingIndex - 1 >= 0) {
                     programmingIndex -= 1
                 } else {
@@ -25,6 +25,26 @@
             }
 
             let campingInstance = [["./pictures/seabaseDrive.jpg", "This picture is me driving a boat during our week long water excursion at scoutings Seabase High Adventure Base."],["./pictures/northernTrip.jpg", "This picture is me during my trip to the Boundary Waters in Minnesota. We spent a week out canoeing and living in the wilderness."]]
+            let campingIndex = 0
+            const campPictureLeft = () => {
+                if (campingIndex - 1 >= 0) {
+                    campingIndex -= 1
+                } else {
+                    campingIndex = (campingInstance.length - 1)
+                }
+                document.getElementById("campingPicture").src = campingInstance[campingIndex][0]
+                document.getElementById("campingWord").innerHTML = campingInstance[campingIndex][1]   
+            }
+            const campPictureRight = () => {
+                if (campingIndex + 1 <= campingInstance.length - 1) {
+                    campingIndex += 1
+                } else {
+                    campingIndex = 0
+                }
+                document.getElementById("campingPicture").src = campingInstance[campingIndex][0]
+                document.getElementById("campingWord").innerHTML = campingInstance[campingIndex][1]
+            }
+
         </script>
     </head>
     <body>
@@ -54,9 +74,9 @@
         <div class="img-div">
             <table>
                 <tr>
-                    <td><button onclick="progPictureLeft()">←</button></td>
+                    <td><button onclick="campPictureLeft()">←</button></td>
                     <td><img id="campingPicture" src="./pictures/seabaseDrive.jpg"></img></td>
-                    <td><button onclick="progPictureRight()">→</button></td>
+                    <td><button onclick="campPictureRight()">→</button></td>
                 </tr>
             </table>
             

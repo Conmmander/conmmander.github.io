@@ -2,50 +2,6 @@
     <head>
         <title>Ryan Dodd's Portfolio - Projects</title>
         <link rel="stylesheet" type="text/css" href="https://conman0552.github.io/src/main.css"></link>
-        <script>
-            let programmingInstance = [["./pictures/mySite.PNG", "A snippet from this website."], ["./pictures/pythonBadges.PNG", "Though relatively new to Python, I can understand the basics of the language. This is a picture of various CodeHS badges I've earned for Python."], ["./pictures/nexus2Bot.png", "This is a picture of a Discord Bot I programmed. It's entirely in JavaScript using Node.JS. It's by far my best project. The source code to it can be found in the Projects tab."], ["./pictures/diagramOrigin2.png", "This is a diagram of a game I was working on in ROBLOX. It shows some code flow that I felt would make sense, and how to manage stagefulness of things on the server and client."]]
-            let programmingIndex = 0
-            const progPictureLeft = () => {
-                if (programmingIndex - 1 >= 0) {
-                    programmingIndex -= 1
-                } else {
-                    programmingIndex = (programmingInstance.length - 1)
-                }
-                document.getElementById("programPicture").src = programmingInstance[programmingIndex][0]
-                document.getElementById("programWord").innerHTML = programmingInstance[programmingIndex][1]   
-            }
-            const progPictureRight = () => {
-                if (programmingIndex + 1 <= programmingInstance.length - 1) {
-                    programmingIndex += 1
-                } else {
-                    programmingIndex = 0
-                }
-                document.getElementById("programPicture").src = programmingInstance[programmingIndex][0]
-                document.getElementById("programWord").innerHTML = programmingInstance[programmingIndex][1]
-            }
-
-            let campingInstance = [["./pictures/seabaseDrive.jpg", "This picture is me driving a boat during our week long water excursion at scoutings Seabase High Adventure Base."],["./pictures/northernTrip.jpg", "This picture is me during my trip to the Boundary Waters in Minnesota. We spent a week out canoeing and living in the wilderness."]]
-            let campingIndex = 0
-            const campPictureLeft = () => {
-                if (campingIndex - 1 >= 0) {
-                    campingIndex -= 1
-                } else {
-                    campingIndex = (campingInstance.length - 1)
-                }
-                document.getElementById("campingPicture").src = campingInstance[campingIndex][0]
-                document.getElementById("campingWord").innerHTML = campingInstance[campingIndex][1]   
-            }
-            const campPictureRight = () => {
-                if (campingIndex + 1 <= campingInstance.length - 1) {
-                    campingIndex += 1
-                } else {
-                    campingIndex = 0
-                }
-                document.getElementById("campingPicture").src = campingInstance[campingIndex][0]
-                document.getElementById("campingWord").innerHTML = campingInstance[campingIndex][1]
-            }
-
-        </script>
     </head>
     <body>
         <nav>
@@ -58,29 +14,9 @@
         <h1>Projects</h1>
         <br>
         <h2>Programming</h2>
-        <p>Some photos related to various programming things I've created. I primarily program in JavaScript and Lua, however I am capable of web design (such as what is seen here). This year I've also been taking time to learn Python and Java.</p>
+        <p>These are some snippets to major programming projects I have created, or in some instances the entire source. Due to various factors and uses, in some cases I cannot provide the entire source.</p>
         <div class="img-div">
-            <table>
-                <tr>
-                    <td><button onclick="progPictureLeft()">←</button></td>
-                    <td><img id="programPicture" src="./pictures/mySite.PNG"></img></td>
-                    <td><button onclick="progPictureRight()">→</button></td>
-                </tr>
-            </table>
-            
-            <h3 id="programWord" class="img-p">A snippet from this website.</h3>
-        </div>
-        <h2>Camping/Outdoor Adventures</h2>
-        <p>One thing I love to do in my free time is go camping. I've camped in the snow, in the summer, and in remote areas like the Boundary Waters in Canda.</p>
-        <div class="img-div">
-            <table>
-                <tr>
-                    <td><button onclick="campPictureLeft()">←</button></td>
-                    <td><img id="campingPicture" src="./pictures/seabaseDrive.jpg"></img></td>
-                    <td><button onclick="campPictureRight()">→</button></td>
-                </tr>
-            </table>
-            
-            <h3 id="campingWord" class="img-p">This picture is me driving a boat during our week long water excursion at scoutings Seabase High Adventure Base.</h3>
+                    <img src="./pictures/mySite.PNG"></img>
+            <h3 class="img-p">A snippet from this website.</h3>
         </div>
     </body>

@@ -1,17 +1,141 @@
 <!DOCTYPE html>
-    <head>
-        <title>Ryan Dodd's Portfolio</title>
-        <link rel="stylesheet" type="text/css" href="https://conman0552.github.io/src/main.css"></link>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/src/picture">Pictures</a></li>
-                <li><a href="/src/projects">Projects</a></li>
-            </ul>
-        </nav>
-        <h1>Ryan Dodd's Portfolio</h1>
-        <br>
-        <p>Welcome to my website related to various accomplishments and skills that I have.</p>
-    </body>
+<html>
+<head>
+    <title>Ryan Dodd</title>
+    <style type="text/css">
+        ul {
+            width: 100%;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            display: list-item;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+        
+        .backgroundImage {
+            width: 100%;
+            height: auto;
+            mix-blend-mode: overlay;
+            padding: 0;
+        }
+
+        .sectionDiv {
+            position: relative;
+            width: 100%;
+            height: 0 auto;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        .textDiv {
+            position: absolute;
+            top: 0;
+            height: 0 auto;
+            margin: 0 auto;
+            width: 90%;
+            left: 5%;
+            text-align: center;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            overflow: hidden;
+        }
+
+        .sectionTitle {
+            font-size: 75px;
+            text-shadow: 10px;
+        }
+
+    </style>
+</head>
+<header>
+    <div style="z-index: 1; width: 100%; height: auto; background: #17195b; position: fixed; top: 0; left: 0; opacity: 100%; box-shadow: 0px 1px 2px;">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</header>
+<body style="background: #242E60; margin: 0">
+    <a name="about">
+    <div class="sectionDiv">
+        <img src="./src/backgrounds/Background1.jpg" alt="Background1" class="backgroundImage">
+        <div class="textDiv">
+            <h1 class="sectionTitle">Ryan Dodd</h1>
+            <p style="font-size: 20px">I'm Ryan, a Freshmen Computer Science Major at Bradley University. In addition to my major, I am also working on minors in Mathmatics and Music. In my free time, you'll find me camping, practicing music, 3D printing, building circuits, or coding random ideas that pop into my head. I would like to focus my career on quantum computing and artificial intelligence.</p>
+            <p style="font-size: 20px">I've worked a number of jobs to gain experience in various fields, and am adaptable to any problem that is presented to me.</p>
+        <h3 style="font-size: 30px">Awards</h3>
+        <p style="font-size: 20px">Eagle Scout<br>Illinois Seal of Commendation in Spanish</p>
+        </div>
+    </div>
+    </a>
+    <a name="experience">
+        <div class="sectionDiv">
+            <img src="./src/backgrounds/Background2.jpg" alt="Background2" class="backgroundImage">
+            <div class="textDiv">
+                <h1 class="sectionTitle">Experience</h1>
+                <div style="display: flex; align-items: center; flex-direction: column;">
+                    <div>
+                        <h3 style="font-size: 25px">Programmer - Self Employed (January 2018 - Present)</h3>
+                        <p style="font-size: 18px">I have been programming for 3 years, and have experience in a variety of languages. I have worked on projects in Python, Java, JavaScript, Lua, and HTML. Most of my projects have been utilized to assist in data management, and communications. In addition, I've composed contracts for payment agreements, and have served as a project lead for a small team, helping to educate new programmers in workflow, code management, and programming in teams.</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 25px">Assistant Resident Advisor - Bradley University (January 2023 - Present)</h3>
+                        <p style="font-size: 18px">As an assistant resident advisor, it is my responsibility to plan monthly floor programs for the residents of my dorm's floor. In addition to this, I am obligated to manage and budget our floor funds, hand out packages for certain periods during the week, and answer the phone when on coverage/weekend duty. I am also expected to interact with my residents and get to know them.</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 25px">Contractor - Firchau Construction (May 2022 - August 2022)</h3>
+                        <p style="font-size: 18px">As a summer job, I worked for a local carpenter down the street. I was responsible for showing up Monday-Saturday to work, regaurdless of the weather. In addition, I took additional responsibilities creating advertisements for the company, gaining proficency in planning and drawing decks, and translating Spanish for my boss.</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 25px">U46 Day Camp Counselor - Three Fires Council, BSA (May 2021 - August 2021)</h3>
+                        <p style="font-size: 18px">I commuted to Elgin Illinois Monday - Thursday, where I worked with fifth and sixth graders at a day camp. I was responsible for ensuring the childrens safety, and helping the instructors manage the outdoor classroom setting.</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 25px">Wednesday Night Assistant - St. Petronille Parish (September 2018 - May 2022)</h3>
+                        <p style="font-size: 18px">Through High School, I worked weekly during Wednesday nights at my church. I was responsible for making hundreds of copies of grade level materials, folding and stapling as necessary. In addition, I took on responsibilities of technical maintence of TVs in the classrooms, and facilitated playing movies during class periods. I was also given a set of keys, and expected to open and close doors during specified times.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    <a name="portfolio">
+        <div class="sectionDiv">
+            <img src="./src/backgrounds/Background3.jpg" alt="Background3" class="backgroundImage">
+            <div class="textDiv">
+                <h1 class="sectionTitle">Portfolio</h1>
+    
+            </div>
+        </div>
+    </a>
+    <a name="contact"></a>
+    <div class="sectionDiv">
+        <img src="./src/backgrounds/Background4.jpg" alt="Background4" class="backgroundImage">
+        <div class="textDiv">
+            <h1 class="sectionTitle">Contact</h1>
+            <div style="display: flex; align-items: center; flex-direction: column;">
+                <a style="font-size: 20px; color: white; text-decoration: none" href="mailto:ryandodd0115@gmail.com">Email: Ryandodd0115@gmail.com</a>
+                <a style="font-size: 20px; color: white; text-decoration: none;" href="https://www.linkedin.com/in/ryan-dodd-171a30249/">LinkedIn - Ryan Dodd</a>
+                <a style="font-size: 20px; color: white; text-decoration: none;" href="https://github.com/Conmmander/">GitHub - Ryan</a>
+            </div>
+        </div>
+    </div>
+    </a>
+</body>
+</html>

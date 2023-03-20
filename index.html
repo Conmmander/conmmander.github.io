@@ -2,7 +2,9 @@
 <html>
 <head>
     <title>Ryan Dodd</title>
+    <meta name="viewport" content="initial-scale=1.0">
     <style type="text/css">
+
         ul {
             width: 100%;
             list-style-type: none;
@@ -23,8 +25,8 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 20px;
+            font-family: 'Sergoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+            font-size: 1.25em;
         }
         
         .backgroundImage {
@@ -56,8 +58,16 @@
         }
 
         .sectionTitle {
-            font-size: 75px;
+            font-size: 4.6875em;
+            stroke-width: 0.0625em;
             text-shadow: 10px;
+        }
+
+        .defaultText {
+            font-size: 1.125em;
+            color: white;
+            text-decoration: none;
+            font-family: 'Sergoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
     </style>
@@ -78,10 +88,10 @@
         <img src="./src/backgrounds/Background1.jpg" alt="Background1" class="backgroundImage">
         <div class="textDiv">
             <h1 class="sectionTitle">Ryan Dodd</h1>
-            <p style="font-size: 20px">I'm Ryan, a Freshmen Computer Science Major at Bradley University. In addition to my major, I am also working on minors in Mathmatics and Music. In my free time, you'll find me camping, practicing music, 3D printing, building circuits, or coding random ideas that pop into my head. I would like to focus my career on quantum computing and artificial intelligence.</p>
-            <p style="font-size: 20px">I've worked a number of jobs to gain experience in various fields, and am adaptable to any problem that is presented to me.</p>
+            <p class="defaultText">I'm Ryan, a Freshmen Computer Science Major at Bradley University. In addition to my major, I am also working on minors in Mathmatics and Music. In my free time, you'll find me camping, practicing music, 3D printing, building circuits, or coding random ideas that pop into my head. I would like to focus my career on quantum computing and artificial intelligence.</p>
+            <p class="defaultText">I've worked a number of jobs to gain experience in various fields, and am adaptable to any problem that is presented to me.</p>
         <h3 style="font-size: 30px">Awards</h3>
-        <p style="font-size: 20px">Eagle Scout<br>Illinois Seal of Commendation in Spanish</p>
+        <p class="defaultText">Eagle Scout<br>Illinois Seal of Commendation in Spanish</p>
         </div>
     </div>
     </a>
@@ -120,7 +130,18 @@
             <img src="./src/backgrounds/Background3.jpg" alt="Background3" class="backgroundImage">
             <div class="textDiv">
                 <h1 class="sectionTitle">Portfolio</h1>
-    
+                <div style="display: flex; align-items: center; flex-direction: column;">
+                    <div>
+                        <h3 style="font-size: 30px">Bradley CS 101 Projects and Assignments</h3>
+                        <p class="defaultText">While at Bradley, I was ahead in my introductory CS 101 course. In order to showcase my abilities, I placed all my class projects and assignments onto Github.</p>
+                        <a class="defaultText" href="https://github.com/Conmmander/Bradley_CS_101_Java_Projects">Project Link</a>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 30px">Websites</h3>
+                        <p class="defaultText">To showcase my work and ability, I decided it would make sense to create a website to do so. As such, this website exists.</p>
+                        <a class="defaultText" href="https://github.com/Conmmander/conmmander.github.io">Website Source</a>
+                    </div>
+                </div>
             </div>
         </div>
     </a>
@@ -130,9 +151,9 @@
         <div class="textDiv">
             <h1 class="sectionTitle">Contact</h1>
             <div style="display: flex; align-items: center; flex-direction: column;">
-                <a style="font-size: 20px; color: white; text-decoration: none" href="mailto:ryandodd0115@gmail.com">Email: Ryandodd0115@gmail.com</a>
-                <a style="font-size: 20px; color: white; text-decoration: none;" href="https://www.linkedin.com/in/ryan-dodd-171a30249/">LinkedIn - Ryan Dodd</a>
-                <a style="font-size: 20px; color: white; text-decoration: none;" href="https://github.com/Conmmander/">GitHub - Ryan</a>
+                <a class="defaultText" href="mailto:ryandodd0115@gmail.com">Email - ryandodd0115@gmail.com</a>
+                <a class="defaultText" href="https://www.linkedin.com/in/ryan-dodd-171a30249/">LinkedIn - Ryan Dodd</a>
+                <a class="defaultText" href="https://github.com/Conmmander/">Github - Ryan</a>
             </div>
         </div>
     </div>

@@ -1,0 +1,25 @@
+:root {
+    --primary: #94e99e;
+    --secondary: #94dfe9;
+    --on_primary: var(--secondary);
+    --on_secondary: #e9c894;
+    --error: #B00020;
+    --on_error: #ffffff;
+}
+
+body {
+    background-color: var(--primary);
+}
+
+.on_primary_box {
+    background-color: var(--on_primary);
+}
+
+.flex-container {
+    display: flex;
+}
+
+.floating-box {
+    box-shadow: black 1px 1px;
+    margin: 10px;
+}

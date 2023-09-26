@@ -1,25 +1,77 @@
+/* Global CSS Variables */
 :root {
-    --primary: #94e99e;
-    --secondary: #94dfe9;
+    --primary: #B3E5FC;
+    --secondary: #00897B;
     --on_primary: var(--secondary);
-    --on_secondary: #e9c894;
+    --on_secondary: var(--primary);
     --error: #B00020;
     --on_error: #ffffff;
 }
 
+/* Builtin Element Modifiers */
 body {
     background-color: var(--primary);
+    margin: 0;
 }
 
-.on_primary_box {
+/* Custom Styles */
+.full-height {
+    height: 100vh;
+}
+
+.circle {
+    border-radius: 50%
+}
+
+/* Color Adjustments */
+.on-primary-box {
     background-color: var(--on_primary);
+    color: var(--on_secondary);
 }
 
+.on-secondary-box {
+    background-color: var(--on_secondary);
+    color: var(--on_primary);
+}
+
+/* Flex data */
 .flex-container {
     display: flex;
 }
 
+.flex-direction-column {
+    flex-direction: column;
+    text-align: center;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
 .floating-box {
-    box-shadow: black 1px 1px;
-    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.362) 0px 0px 4px 4px;
+}
+
+.nav-box {
+    aspect-ratio: 1 / 1;
+    width: 50%;
+    margin-bottom: 2.5px;
+    margin-top: 2.5px;
+}
+
+.nav-icon {
+    aspect-ratio: 1 / 1;
+    width: 80%;
+    mix-blend-mode: color;
+    object-fit: fill;
+    object-position: center;
+}
+
+.button {
+    border-radius: 15%
+}
+
+.on-secondary-box.button:hover {
+    background-color: #8cb5c8;
+    color: var(--on_primary);
 }

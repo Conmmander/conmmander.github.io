@@ -11,6 +11,7 @@ pick 2 fonts (fonts are color, typeface
     --on_secondary: var(--off_white);
     --accent_color: #880D1E;
     --header: 'Martian Mono', monospace;
+    --body: Space Mono - Google Fonts
 }
 
 /* Builtin Element Modifiers */
@@ -19,12 +20,30 @@ body {
     margin: 0;
 }
 
-h {
-    font-family: var(--header)
+h1 {
+    font-family: var(--header);
+    font-weight: 800;
 }
 
-h5 {
-    font-family: var(--header)
+h2 {
+    font-family: var(--header);
+    font-weight: 300;
+}
+
+a {
+    font-family: var(--body);
+    font-weight: 300;
+    text-decoration: none;
+    color: var(--on_secondary);
+    text-align: center;
+    vertical-align: middle;
+    size: auto;
+}
+
+p {
+    font-family: var(--body);
+    font-weight: 300;
+    margin: 0;
 }
 
 /* Custom Styles */
@@ -67,24 +86,18 @@ h5 {
 
 .nav-box {
     background-color: var(--accent_color);
-    height: 10%;
-    width: 70%;
+    height: 5%;
+    width: 60%;
+    border-radius: 20%;
     margin-bottom: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
 }
 
-.nav-icon {
-    width: 80%;
-    mix-blend-mode: color;
-    object-fit: fill;
-    object-position: center;
-}
-
-.button {
-    border-radius: 20%
-}
-
-.on-secondary-box.button:hover {
-    background-color: #8cb5c8;
-    color: var(--on_primary);
+.nav-box.floating-box:hover {
+    background-color: #6b0a17;
 }

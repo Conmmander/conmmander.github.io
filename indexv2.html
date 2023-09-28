@@ -4,44 +4,55 @@
     <title>Ryan Dodd</title>
     <meta charset="utf-8">
     <meta name="author" content="Ryan Dodd">
+    <meta name="keywords" content="Ryan Dodd, Computer Science, Portfolio, Dodd, Ryan">
+    <meta name="descripton" content="Ryan Dodd's Portfolio website">
     <meta name="viewport" content="initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="./src/favicon.jpg">
     <link rel="stylesheet" type="text/css" href="./src/main.css">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="./src/body.js"></script>
+
+    <!-- Fonts from Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;800&display=swap" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&family=Space+Mono&display=swap" rel="stylesheet" type="text/css">
 </head>
 
 <!-- Page core -->
 <body class="flex-container">
     <!-- Left Navbar -->
-    <div class="full-height secondary-box floating-box" style="width: 12.5vw; margin-right: 0.5vw">
+    <nav class="full-height secondary-box floating-box" style="width: 12.5vw; margin-right: 0.5vw">
         <div class="flex-container flex-direction-column flex-align-center" style="padding-top: 10vh; padding-bottom: 10vh; padding-right: 5px; padding-left: 5px">
             <div style="display: inline-block; width: 70%">
                 <img src="./src/img/portrait_bw.JPG" style="width: 100%; aspect-ratio: 1 / 1" class="circle"/>
             </div>
-            <h>Ryan Dodd</h>
-            <h5>Computer Science Major and Creative Maker</h5><br>
-            <div class="nav-box secondary-box floating-box button">
-                <p>About</p>
-            </div>
-            <div class="nav-box secondary-box floating-box button">
-                <p>Experience</p>
-            </div>
-            <div class="nav-box secondary-box floating-box button">
-                <p>Portfolio</p>
-            </div>
-            <div class="nav-box secondary-box floating-box button">
-                <p>Contact</p>
-            </div>
-            <div class="nav-box secondary-box floating-box button">
-                <p>Resume</p>
-            </div>
+            <h1 style="font-size: 1em">Ryan Dodd</h1>
+            <h2 style="font-size: 1em">Computer Science Major and Creative Maker</h2><br>
+            <button class="nav-box secondary-box floating-box button">
+                <a href="#about">About</a>
+            </button>
+            <button class="nav-box secondary-box floating-box button">
+                <a href="#experience">Experience</a>
+            </button>
+            <button class="nav-box secondary-box floating-box button">
+                <a href="#portfolio">Portfolio</a>
+            </button>
+            <button class="nav-box secondary-box floating-box button">
+                <a href="#contact">Contact</a>
+            </button>
+            <button class="nav-box secondary-box floating-box button">
+                <a>Resume</a>
+            </button>
         </div>
-    </div>
+    </nav>
 
     <!-- Right content holder -->
-    <div class="full-height" style="padding-left: 13vw; width: 87vw">
-
-    </div>
+    <main id="main" class="full-height" style="padding-left: 13vw; width: 87vw">
+        <!-- Content within here will be adjusted based on the button clicked. It will default to the "About" tab -->
+        <div id="about" class="flex-container flex-direction-column flex-align-center" style="padding-top: 10vh; padding-bottom: 10vh; padding-right: 10px; padding-left: 10px">
+            <h1 style="font-size: 2em">About Me</h1>
+            <p style="font-size: 1.5em">I am a Computer Science major at Bradley University in Peoria. On top of this, I am working toward a double minor in mathematics and music. I regularly can be found programming, practicing my cello, or simply in the outdoors, camping.</p>
+    </main>
 </body>

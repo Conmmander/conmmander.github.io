@@ -1,17 +1,30 @@
 /* Global CSS Variables */
+/* Check out a monospace font
+pick 2 fonts (fonts are color, typeface
+*/
 :root {
-    --primary: #B3E5FC;
-    --secondary: #00897B;
-    --on_primary: var(--secondary);
-    --on_secondary: var(--primary);
-    --error: #B00020;
-    --on_error: #ffffff;
+    --primary: #C3D898;
+    --secondary: #33658A;
+    --off_white: #EEF7FC;
+    --off_black: #000010;
+    --on_primary: var(--off_black);
+    --on_secondary: var(--off_white);
+    --accent_color: #880D1E;
+    --header: 'Martian Mono', monospace;
 }
 
 /* Builtin Element Modifiers */
 body {
     background-color: var(--primary);
     margin: 0;
+}
+
+h {
+    font-family: var(--header)
+}
+
+h5 {
+    font-family: var(--header)
 }
 
 /* Custom Styles */
@@ -24,14 +37,14 @@ body {
 }
 
 /* Color Adjustments */
-.on-primary-box {
-    background-color: var(--on_primary);
-    color: var(--on_secondary);
+.primary-box {
+    background-color: var(--primary);
+    color: var(--on_primary);
 }
 
-.on-secondary-box {
-    background-color: var(--on_secondary);
-    color: var(--on_primary);
+.secondary-box {
+    background-color: var(--secondary);
+    color: var(--on_secondary);
 }
 
 /* Flex data */
@@ -53,14 +66,14 @@ body {
 }
 
 .nav-box {
-    aspect-ratio: 1 / 1;
-    width: 50%;
-    margin-bottom: 2.5px;
-    margin-top: 2.5px;
+    background-color: var(--accent_color);
+    height: 10%;
+    width: 70%;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .nav-icon {
-    aspect-ratio: 1 / 1;
     width: 80%;
     mix-blend-mode: color;
     object-fit: fill;
@@ -68,7 +81,7 @@ body {
 }
 
 .button {
-    border-radius: 15%
+    border-radius: 20%
 }
 
 .on-secondary-box.button:hover {

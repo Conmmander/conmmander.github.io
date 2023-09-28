@@ -54,6 +54,10 @@ p {
     font-size: 1.5em;
 }
 
+p.smaller {
+    font-size: 1em;
+}
+
 /* Custom Styles */
 .full-height {
     height: 100vh;
@@ -92,7 +96,7 @@ p {
     box-shadow: rgba(0, 0, 0, 0.362) 0px 0px 4px 4px;
 }
 
-.nav-box {
+.clickable-box {
     background-color: var(--accent_color);
     height: 5%;
     width: 60%;
@@ -106,6 +110,18 @@ p {
     border: none;
 }
 
-.nav-box.floating-box:hover {
+.body-link {
+    height: 5%;
+    width: 15%;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+}
+
+.clickable-box.floating-box:hover {
     background-color: #6b0a17;
 }

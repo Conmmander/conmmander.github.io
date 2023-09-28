@@ -30,20 +30,20 @@
             </div>
             <h1 style="font-size: 1em">Ryan Dodd</h1>
             <h2 style="font-size: 1em">Computer Science Major and Creative Maker</h2><br>
-            <button class="nav-box secondary-box floating-box button">
+            <button class="clickable-box secondary-box floating-box">
                 <a onclick="about()">About</a>
             </button>
-            <button class="nav-box secondary-box floating-box button">
-                <a href="#experience">Experience</a>
+            <button class="clickable-box secondary-box floating-box">
+                <a onclick="experience()">Experience</a>
             </button>
-            <button class="nav-box secondary-box floating-box button">
-                <a href="#portfolio">Portfolio</a>
+            <button class="clickable-box secondary-box floating-box">
+                <a onclick="portfolio()">Portfolio</a>
             </button>
-            <button class="nav-box secondary-box floating-box button">
-                <a href="#contact">Contact</a>
+            <button class="clickable-box secondary-box floating-box">
+                <a onclick="contact()">Contact</a>
             </button>
-            <button class="nav-box secondary-box floating-box button">
-                <a>Resume</a>
+            <button class="clickable-box secondary-box floating-box">
+                <a href="./src/full_resume.pdf" target="_blank" rel="noopener noreferrer" download>Resume</a>
             </button>
         </div>
     </nav>
@@ -51,5 +51,84 @@
     <!-- Right content holder -->
     <main id="main" class="full-height" style="width: 80vw">
         <!-- Content within here will be adjusted based on the button clicked. It will default to the "About" tab -->
+        <!-- About Me -->
+        <div id="about" class="flex-container flex-direction-column flex-align-center" style="padding-top: 5vh; padding-bottom: 5vh; padding-right: 10px; padding-left: 10px">
+            <h1 style="font-size: 2em">About Me</h1>
+            <p style="font-size: 1.5em">I am a Computer Science major at Bradley University in Peoria. On top of this, I am working toward a double minor in mathematics and music. I regularly can be found programming, practicing my cello, or simply in the outdoors, camping.</p><br>
+            <p style="font-size: 1.5em">Beyond this, I also enjoy 3D printing, video editting, playing with my dogs, and reading.</p><br>
+            <h1 style="font-size: 2em">My Awards</h1>
+            <ul>
+                <li><p>Eagle Scout</p></li>
+                <li><p>Illinois Seal of Commendation in Spanish</p></li>
+                <li><p>Order of the Arrow - Vigil Honor</p></li>
+                <li><p>Territory Venturing Leadership Award</p></li>
+                <li><p>2 time Bradley Dean's List Recipient</p></li>
+            </ul>
+        </div>
+
+        <!-- Experience -->
+        <div id="experience" class="flex-container flex-direction-column flex-align-center" style="display: none; padding-top: 5vh; padding-bottom: 10vh; padding-right: 10px; padding-left: 10px">
+            <h1 style="font-size: 2em">Experience</h1>
+            <p>I have a fair amount of experience in a few different fields, including IT, Programming, and construction.</p><br>
+            <h2>Programmer - Self Employed (<time datetime="2018-1">January 2018</time> - Present)</h2>
+            <p class="smaller">I have been programming for 5 years, and have experience in a variety of languages. 
+                I have worked on projects in Python, Java, JavaScript, Lua, C++, and HTML. 
+                Most of my projects have been utilized to assist in data management, and communications. 
+                In addition, I've composed contracts for payment agreements, and have served as a project lead for a small team, helping to educate new programmers in workflow, code management, and programming in teams. 
+                I also taught myself how to use the Adobe Creative Cloud suite of tools for logo creation, and more.
+            </p>
+            <h2>IT Service Desk Consultant - Bradley University (<time datetime="2023-4">April 2023</time> - Present)</h2>
+            <p class="smaller">Starting near the end of the school year as a freshmen, I took on work at the IT Servicee Desk at Bradley.
+                I ended up living on campus over the summer, and continue to work at the desk during the school year, putting in approximately 10 hours a week.
+            </p>
+            <h2>Residential Advisor - Bradley University (<time datetime="2023-1">January 2023</time> - Present)</h2>
+            <p class="smaller">As an Residential Advisor, it is my responsibility to plan monthly floor programs for the residents of my dorm's floor. 
+                In addition to this, I am obligated to manage and budget our floor funds, hand out packages for certain periods during the week, and answer the phone when on coverage/weekend duty. 
+                I am also expected to interact with my residents and get to know them.
+                I was promoted after my first semester on the job to be a Residential Advisor, having served prior as an Assistant Residential Advisor.
+                Because of this promotion, I am also obligated to train new ARAs, and was placed on an Honors Floor community, which has additional event requirements as well.
+                Within this role, I have also taken on the responsibility of managing the residential management system, StarRez.
+                As such, I work with a custom SQL offshoot called StarQL, write email templates, manage security keys, and much more to assist the university with resident management.
+            </p>
+        </div>
+
+        <!-- Portfolio -->
+        <div id="portfolio" class="flex-container flex-direction-column flex-align-center" style="display: none; padding-top: 5vh; padding-bottom: 10vh; padding-right: 10px; padding-left: 10px">
+            <h1 style="font-size: 2em">Portfolio</h1>
+            <p>Take a look at some of my notable projects, assignments, and works that I'm proud of!</p>
+            <h2>Bradley CS 101 Projects and Assignments</h2>
+            <p class="smaller">While at Bradley, I was ahead in my introductory CS 101 course as a <time datetime="2022">Freshmen</time>. In order to showcase my abilities, I placed all my class projects and assignments onto Github.</p>
+            <button class="clickable-box secondary-box floating-box body-link">
+                <a href="https://github.com/Conmmander/Bradley_CS_101_Java_Projects" target="_blank" rel="noopener noreferrer">Project Link</a>
+            </button>
+            <h2>Website</h2>
+            <p class="smaller">To showcase my work and ability, I decided it would make sense to create a website to do so. As such, this website exists.</p>
+            <button class="clickable-box secondary-box floating-box body-link">
+                <a href="https://github.com/Conmmander/conmmander.github.io" target="_blank" rel="noopener noreferrer">Website Source</a>
+            </button>
+            <h2>Video Game Frameworks</h2>
+            <p class="smaller">On the popular gaming platform, Roblox, I worked for a large part of a year on a game framework called 'wAVE', which was meant to bring Halo styled combat to Roblox. While it never released, it's a large project worth showcasing none the less. I do not own the project source, so please reach out if it is not viewable.</p>
+            <button class="clickable-box secondary-box floating-box body-link">
+                <a href="https://github.com/Zenthial/wave" target="_blank" rel="noopener noreferrer">Project Source</a>
+            </button>
+        </div>
+
+        <!-- Contacts -->
+        <div id="contact" class="flex-container flex-direction-column flex-align-center" style="display: none; padding-top: 5vh; padding-bottom: 10vh; padding-right: 10px; padding-left: 10px">
+            <h1 style="font-size: 2em">Contact Information</h1>
+            <p>I can be contacted through any of the following means. I would prefer an email over anything else.</p>
+            <button class="clickable-box secondary-box floating-box body-link">
+                <a href="tel:847-340-4582">Phone - (847) 340-4582</a>
+            </button>
+            <button class="clickable-box secondary-box floating-box body-link">
+                <a href="https://www.linkedin.com/in/ryan-dodd-171a30249/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </button>
+            <button class="clickable-box secondary-box floating-box body-link">
+                <a href="https://github.com/Conmmander/" target="_blank" rel="noopener noreferrer">GitHub</a><br>
+            </button>
+            <button class="clickable-box secondary-box floating-box body-link">
+                <a href="mailto:ryan@ryandodd">Email</a><br>
+            </button>
+        </div>
     </main>
 </body>

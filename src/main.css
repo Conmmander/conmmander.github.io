@@ -58,6 +58,12 @@ p.smaller {
     font-size: 1em;
 }
 
+img {
+    object-fit: contain;
+    width: auto;
+    padding: 10px;
+}
+
 /* Custom Styles */
 .full-height {
     height: 100vh;
@@ -100,7 +106,7 @@ p.smaller {
     background-color: var(--accent_color);
     height: 5%;
     width: 60%;
-    border-radius: 20%;
+    border-radius: 20px;
     margin-bottom: 5px;
     margin-top: 10px;
     padding-top: 10px;

@@ -1,7 +1,9 @@
 // This contains code for the body of the page
 let currentPortfolioImg = 1;
 let currentExperiencePage = 1;
+let currentPortfolioPage = 1;
 const TOTAL_PORTFOLIO_IMAGES = 12;
+const TOTAL_PORTFOLIO_PAGES = 2;
 const TOTAL_EXPERIENCE_PAGES = 2;
 
 function about() {
@@ -33,7 +35,22 @@ function contact() {
 }
 
 function loadPortfolio() {
-
+    for (let i = 1; i <= TOTAL_PORTFOLIO_PAGES; i++) {
+        document.getElementById('portfolio'+i).style.display = "none";
+    }
+    document.getElementById('portfolio'+currentPortfolioPage).style.display = "block";
+    document.getElementById('portfoliotitle').innerText = "Portfolio (" + currentPortfolioPage + "/" + TOTAL_PORTFOLIO_PAGES + ")";
+    if (currentPortfolioImg - 1 <= 0) {
+        document.getElementById('portback').src = "./src/image_showcase/showcase_12.png"
+    } else {
+        document.getElementById('portback').src = "./src/image_showcase/showcase_" + (currentPortfolioImg-1) + ".png"
+    }
+    document.getElementById('portcurrent').src = "./src/image_showcase/showcase_" + currentPortfolioImg + ".png"
+    if (currentPortfolioImg + 1 > TOTAL_PORTFOLIO_IMAGES) {
+        document.getElementById('portforward').src = "./src/image_showcase/showcase_1.png"
+    } else {
+        document.getElementById('portforward').src = "./src/image_showcase/showcase_" + (currentPortfolioImg+1) + ".png"
+    }
 }
 
 function loadExperience() {
@@ -58,6 +75,24 @@ function portfolioBackward() {
         currentPortfolioImg = TOTAL_PORTFOLIO_IMAGES;
     } else {
         currentPortfolioImg--;
+    }
+    loadPortfolio();
+}
+
+function portfolioPGForward() {
+    if (currentPortfolioPage + 1 > TOTAL_PORTFOLIO_PAGES) {
+        currentPortfolioPage = 1;
+    } else {
+        currentPortfolioPage++;
+    }
+    loadPortfolio();
+}
+
+function portfolioPGBackward() {
+    if (currentPortfolioPage - 1 <= 0) {
+        currentPortfolioPage = TOTAL_PORTFOLIO_PAGES;
+    } else {
+        currentPortfolioPage--;
     }
     loadPortfolio();
 }

@@ -1,220 +1,187 @@
 <!DOCTYPE html>
-<html style="scroll-behavior: smooth">
 <head>
-    <title title="The portfolio website for Ryan">Ryan Dodd</title>
+    <!-- Key website information and data -->
+    <title>Ryan Dodd</title>
     <meta charset="utf-8">
     <meta name="author" content="Ryan Dodd">
+    <meta name="keywords" content="Ryan Dodd, Computer Science, Portfolio, Dodd, Ryan">
+    <meta name="descripton" content="Ryan Dodd's Portfolio website">
     <meta name="viewport" content="initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="./src/favicon.jpg">
-    <style type="text/css">
+    <link rel="stylesheet" type="text/css" href="./src/main.css">
 
-        ul {
-            width: 100vw;
-            max-width: 100%;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-        }
+    <!-- Scripts -->
+    <script type="text/javascript" src="./src/body.js"></script>
 
-        li {
-            display: list-item;
-        }
+    <!-- Fonts from Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;800&display=swap" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&family=Space+Mono&display=swap" rel="stylesheet" type="text/css">
 
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 0.729167vw 0.83vw;
-            text-decoration: none;
-            font-family: 'Sergoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
-            font-size: min(2.15vh, 1.04167vw);
-        }
-        
-        .backgroundImage {
-            width: 100vw;
-            max-width: 100%;
-            height: 100vh;
-            mix-blend-mode: overlay;
-            padding: 0;
-            object-fit: cover;
-
-        }
-
-        .sectionDiv {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            max-width: 100%;
-            overflow-y: hidden;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .textDiv {
-            position: absolute;
-            top: 0;
-            height: 0 auto;
-            margin: 0 auto;
-            width: 90%;
-            left: 5%;
-            text-align: center;
-            color: white;
-            font-family: 'Times New Roman', Times, serif;
-            overflow: hidden;
-        }
-
-        .sectionTitle {
-            font-size: min(8.073vh, 3.90625vw);
-            stroke-width: 0.11vh;
-            margin-top: max(5.38vh, 2.604vw);
-        }
-
-        .subsectionTitle {
-            font-size: min(3.23vh, 1.5625vw);
-        }
-
-        .defaultText {
-            font-size: min(1.937vh, 0.9375vw);
-            color: white;
-            text-decoration: none;
-            font-family: 'Sergoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .experienceHeaderText {
-            font-size: min(2.7vh, 1.302vw);
-        }
-
-        .experienceText {
-            font-size: min(1.937vh, 0.9375vw);
-        }
-
-        .imageShowcase {
-            height: min(10.76vh, 5.208vw);
-            width: auto;
-            object-fit: contain;
-            margin-right: 0.3125em;
-            margin-left: 0.3125em;
-        }
-    </style>
+    <!-- Icons from Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
-<body style="background: #242E60; margin: 0">
-    <header>
-        <div style="z-index: 1; width: 100vw; max-width: 100%; height: auto; background: #17195b; position: fixed; top: 0; left: 0; opacity: 100%; box-shadow: 0px 1px 2px;">
+
+<!-- Page core -->
+<body class="flex-container">
+    <!-- Left Navbar -->
+    <nav class="full-height secondary-box floating-box" style="width: 12.5vw; margin-right: 0.5vw">
+        <div class="flex-container flex-direction-column flex-align-center" style="padding-top: 10vh; padding-bottom: 10vh; padding-right: 5px; padding-left: 5px">
+            <div style="display: inline-block; width: 70%">
+                <img src="./src/img/portrait_bw.JPG" style="width: 100%; aspect-ratio: 1 / 1" class="circle"/>
+            </div>
+            <h1 style="font-size: 1em">Ryan Dodd</h1>
+            <h2 style="font-size: 1em">Computer Science Major and Creative Maker</h2><br>
+            <button onclick="about()" class="clickable-box secondary-box floating-box">About</button>
+            <button onclick="experience()" class="clickable-box secondary-box floating-box">Experience</button>
+            <button onclick="portfolio()" class="clickable-box secondary-box floating-box">Portfolio</button>
+            <button onclick="contact()" class="clickable-box secondary-box floating-box">Contact</button>
+            <button class="clickable-box secondary-box floating-box">
+                <a href="./src/full_resume.pdf" target="_blank" rel="noopener noreferrer" download>Resume</a>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Right content holder -->
+    <main id="main" class="full-height" style="width: 80vw">
+        <!-- Content within here will be adjusted based on the button clicked. It will default to the "About" tab -->
+        <!-- About Me -->
+        <div id="about" class="flex-container flex-direction-column flex-align-center" style="padding-top: 5vh; padding-bottom: 5vh; padding-right: 10px; padding-left: 10px">
+            <h1 style="font-size: 2em">About Me</h1>
+            <p style="font-size: 1.5em">I am a Computer Science major at Bradley University in Peoria. On top of this, I am working toward a double minor in mathematics and music. I regularly can be found programming, practicing my cello, or simply in the outdoors, camping.</p><br>
+            <p style="font-size: 1.5em">Beyond this, I also enjoy 3D printing, video editting, playing with my dogs, and reading.</p><br>
+            <h1 style="font-size: 2em">My Awards</h1>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="./src/full_resume.docx" download>Resume</a></li>
+                <li><p>Eagle Scout</p></li>
+                <li><p>Illinois Seal of Commendation in Spanish</p></li>
+                <li><p>Order of the Arrow - Vigil Honor</p></li>
+                <li><p>Territory Venturing Leadership Award</p></li>
+                <li><p>2 time Bradley Dean's List Recipient</p></li>
             </ul>
         </div>
-    </header>
-    <div>
-        <a name="about">
-            <div class="sectionDiv">
-                <img src="./src/backgrounds/Background1.jpg" alt="Background1" class="backgroundImage">
-                <div class="textDiv">
-                    <h1 class="sectionTitle">Ryan Dodd</h1>
-                    <p class="defaultText">I'm Ryan, a Freshmen Computer Science Major at Bradley University. In addition to my major, I am also working on minors in Mathmatics and Music. In my free time, you'll find me camping, practicing music, 3D printing, video editting, building circuits, or coding random ideas that pop into my head. I would like to focus my career on quantum computing and artificial intelligence.</p>
-                    <p class="defaultText">I've worked a number of jobs to gain experience in various fields, and am adaptable to any problem that is presented to me.</p>
-                <h3 class="subsectionTitle">Awards</h3>
-                <p class="defaultText">Eagle Scout<br>Illinois Seal of Commendation in Spanish</p>
-                </div>
+
+        <!-- Experience -->
+        <div id="experience" class="flex-container flex-direction-column flex-align-center" style="display: none; padding-top: 5vh; padding-bottom: 10vh; padding-right: 10px; padding-left: 10px">
+            <h1 id="experiencetitle" style="font-size: 2em">Experience (1/2)</h1>
+            <p>I have a fair amount of experience in a few different fields, including, but not limited to, IT, Programming, and construction.</p><br>
+            
+            <!-- Experience Page 1 -->
+            <div id="experience1" style="display: block">
+                <h2>Programmer - Self Employed (<time datetime="2018-1">January 2018</time> - Present)</h2>
+                <p class="smaller">I have been programming for 5 years, and have experience in a variety of languages. 
+                    I have worked on projects in Python, Java, JavaScript, Lua, C++, and HTML. 
+                    Most of my projects have been utilized to assist in data management, and communications. 
+                    In addition, I've composed contracts for payment agreements, and have served as a project lead for a small team, helping to educate new programmers in workflow, code management, and programming in teams. 
+                    I also taught myself how to use the Adobe Creative Cloud suite of tools for logo creation, and more. Currenty, I am also learning dart, so that I can produce applications using flutter.
+                </p>
+                <h2>IT Service Desk Consultant - Bradley University (<time datetime="2023-4">April 2023</time> - Present)</h2>
+                <p class="smaller">Starting near the end of the school year as a freshmen, I took on work at the IT Servicee Desk at Bradley.
+                    I ended up living on campus over the summer, and continue to work at the desk during the school year, putting in approximately 10 hours a week.
+                </p>
+                <h2>Residential Advisor - Bradley University (<time datetime="2023-1">January 2023</time> - Present)</h2>
+                <p class="smaller">As an Residential Advisor, it is my responsibility to plan monthly floor programs for the residents of my dorm's floor. 
+                    In addition to this, I am obligated to manage and budget our floor funds, hand out packages for certain periods during the week, and answer the phone when on coverage/weekend duty. 
+                    I am also expected to interact with my residents and get to know them.
+                    I was promoted after my first semester on the job to be a Residential Advisor, having served prior as an Assistant Residential Advisor.
+                    Because of this promotion, I am also obligated to train new ARAs, and was placed on an Honors Floor community, which has additional event requirements as well.
+                    Within this role, I have also taken on the responsibility of managing the residential management system, StarRez.
+                    As such, I work with a custom SQL offshoot called StarQL, write email templates, manage security keys, and much more to assist the university with resident management.
+                </p>
             </div>
-        </a>
-        <a name="experience">
-            <div class="sectionDiv">
-                <img src="./src/backgrounds/Background2.jpg" alt="Background2" class="backgroundImage">
-                <div class="textDiv">
-                    <h1 class="sectionTitle">Experience</h1>
-                    <div style="display: flex; align-items: center; flex-direction: column;">
-                        <div>
-                            <h3 class="experienceHeaderText">Programmer - Self Employed (<time datetime="2018-1">January 2018</time> - Present)</h3>
-                            <p class="experienceText">I have been programming for 3 years, and have experience in a variety of languages. I have worked on projects in Python, Java, JavaScript, Lua, and HTML. Most of my projects have been utilized to assist in data management, and communications. In addition, I've composed contracts for payment agreements, and have served as a project lead for a small team, helping to educate new programmers in workflow, code management, and programming in teams. I also taught myself how to use the Adobe Creative Cloud suite of tools for logo creation, and more.</p>
-                        </div>
-                        <div>
-                            <h3 class="experienceHeaderText">Assistant Resident Advisor - Bradley University (<time datetime="2023-1">January 2023</time> - Present)</h3>
-                            <p class="experienceText">As an assistant resident advisor, it is my responsibility to plan monthly floor programs for the residents of my dorm's floor. In addition to this, I am obligated to manage and budget our floor funds, hand out packages for certain periods during the week, and answer the phone when on coverage/weekend duty. I am also expected to interact with my residents and get to know them.</p>
-                        </div>
-                        <div>
-                            <h3 class="experienceHeaderText">Contractor - Firchau Construction (<time datetime="2022-5">May 2022</time> - <time datetime="2022-8">August 2022</time>)</h3>
-                            <p class="experienceText">As a summer job, I worked for a local carpenter down the street. I was responsible for showing up Monday-Saturday to work, regaurdless of the weather. In addition, I took additional responsibilities creating advertisements for the company, gaining proficency in planning and drawing decks, and translating Spanish for my boss.</p>
-                        </div>
-                        <div>
-                            <h3 class="experienceHeaderText">U46 Day Camp Counselor - Three Fires Council, BSA (<time datetime="2021-5">May 2021</time> - <time datetime="2021-8">August 2021</time>)</h3>
-                            <p class="experienceText">I commuted to Elgin Illinois Monday - Thursday, where I worked with fifth and sixth graders at a day camp. I was responsible for ensuring the childrens safety, and helping the instructors manage the outdoor classroom setting.</p>
-                        </div>
-                        <div>
-                            <h3 class="experienceHeaderText">Wednesday Night Assistant - St. Petronille Parish (<time datetime="2018-9">September 2018</time> - <time datetime="2022-5">May 2022</time>)</h3>
-                            <p class="experienceText">Through High School, I worked weekly during Wednesday nights at my church. I was responsible for making hundreds of copies of grade level materials, folding and stapling as necessary. In addition, I took on responsibilities of technical maintence of TVs in the classrooms, and facilitated playing movies during class periods. I was also given a set of keys, and expected to open and close doors during specified times.</p>
-                        </div>
-                    </div>
-                </div>
+
+            <!-- Experience Page 2 -->
+            <div id="experience2" style="display: none">
+                <h2>Contractor - Firchau Construction (<time datetime="2022-5">May 2022</time> - <time datetime="2022-8">August 2022</time>)</h2>
+                <p class="smaller">As a summer job, I worked for a local carpenter down the street. I was responsible for showing up Monday-Saturday to work, regaurdless of the weather. 
+                    In addition, I took additional responsibilities creating advertisements for the company, gaining proficency in planning and drawing decks, and translating Spanish for my boss.
+                </p>
+                <h2>Day Camp Counselor - Three Fires Council, BSA (<time datetime="2021-5">May 2021</time> - <time datetime="2021-8">August 2021</time>)</h2>
+                <p class="smaller">I commuted to Elgin, Illinois from Monday - Thursday. While there, I worked with fifth and sixth graders at a day camp. 
+                    I was responsible for ensuring the childrens safety, and helping the instructors manage the outdoor classroom setting.
+                </p>
+                <h2>Wednesday Night Assistant - St. Petronille Parish (<time datetime="2018-9">September 2018</time> - <time datetime="2022-5">May 2022</time>)</h2>
+                <p class="smaller">Through High School, I worked weekly during Wednesday nights at my church. 
+                    I was responsible for making hundreds of copies of grade level materials, folding and stapling as necessary. 
+                    In addition, I took on responsibilities of technical maintence of TVs in the classrooms, and facilitated playing movies during class periods. 
+                    I was also given a set of keys, and expected to open and close doors during specified times.
+                </p>
             </div>
-        </a>
-        <a style="scroll-behavior: smooth;" name="portfolio">
-            <div class="sectionDiv">
-                <img src="./src/backgrounds/Background3.jpg" alt="Background3" class="backgroundImage">
-                <div class="textDiv">
-                    <h1 class="sectionTitle">Portfolio</h1>
-                    <div style="display: flex; align-items: center; flex-direction: column;">
-                        <div>
-                            <h3 class="subsectionTitle">Bradley CS 101 Projects and Assignments</h3>
-                            <p class="defaultText">While at Bradley, I was ahead in my introductory CS 101 course as a <time datetime="2022">Freshmen</time>. In order to showcase my abilities, I placed all my class projects and assignments onto Github.</p>
-                            <a class="defaultText" href="https://github.com/Conmmander/Bradley_CS_101_Java_Projects">Project Link</a>
-                        </div>
-                        <div>
-                            <h3 class="subsectionTitle">Website</h3>
-                            <p class="defaultText">To showcase my work and ability, I decided it would make sense to create a website to do so. As such, this website exists.</p>
-                            <a class="defaultText" href="https://github.com/Conmmander/conmmander.github.io">Website Source</a>
-                        </div>
-                        <div>
-                            <h3 class="subsectionTitle">Video Game Frameworks</h3>
-                            <p class="defaultText">On the popular gaming platform, Roblox, I worked for a large part of a year on a game framework called 'wAVE', which was meant to bring Halo styled combat to Roblox. While it never released, it's a large project worth showcasing none the less. I do not own the project source, so please reach out if it is not viewable.</p>
-                            <a class="defaultText" href="https://github.com/Zenthial/wave">Project Source</a>
-                        </div>
-                        <div>
-                            <h3 class="subsectionTitle">Photos and Logos</h3>
-                            <p class="defaultText">In my free time, I've created a number of logos and images for projects I've worked on.</p>
-                            <div style="width: auto; overflow-y: hidden; overflow-x: auto; display: flex; align-items: center;">
-                                <img src="./src/image_showcase/showcase_1.png" alt="showcase_1" class="imageShowcase">
-                                <img src="./src/image_showcase/showcase_2.png" alt="showcase_2" class="imageShowcase">
-                                <img src="./src/image_showcase/showcase_3.png" alt="showcase_3" class="imageShowcase">
-                                <img src="./src/image_showcase/showcase_4.png" alt="showcase_4" class="imageShowcase">
-                                <img src="./src/image_showcase/showcase_5.png" alt="showcase_5" class="imageShowcase">
-                                <img src="./src/image_showcase/showcase_6.png" alt="showcase_6" class="imageShowcase">
-                                <img src="./src/image_showcase/showcase_7.png" alt="showcase_7" class="imageShowcase">
-                                <img src="./src/image_showcase/showcase_8.png" alt="showcase_8" class="imageShowcase">
-                                <img src="./src/image_showcase/showcase_9.png" alt="showcase_9" class="imageShowcase">
-                                <img src="./src/image_showcase/showcase_10.png" alt="showcase_10" class="imageShowcase">
-                                <img src="./src/image_showcase/showcase_11.png" alt="showcase_11" class="imageShowcase">
-                                <img src="./src/image_showcase/showcase_12.png" alt="showcase_12" class="imageShowcase">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a name="contact"></a>
-        <div class="sectionDiv">
-            <img src="./src/backgrounds/Background4.jpg" alt="Background4" class="backgroundImage">
-            <div class="textDiv">
-                <h1 class="sectionTitle">Contact</h1>
-                <div style="display: flex; align-items: center; flex-direction: column;">
-                    <a class="defaultText" href="mailto:ryandodd0115@gmail.com">Email - ryandodd0115@gmail.com</a>
-                    <a class="defaultText" href="tel:847-340-4582">Phone - 847-340-4582</a>
-                    <a class="defaultText" href="https://www.linkedin.com/in/ryan-dodd-171a30249/">LinkedIn - Ryan Dodd</a>
-                    <a class="defaultText" href="https://github.com/Conmmander/">Github - Ryan</a><br>
-                    <p class="defaultText">If you'd like a website like this or similar, feel free to reach out. I am charging $50 per website.</p>
-                </div>
+
+            <!-- Left/Right Experience Buttons -->
+            <div style="position: fixed; bottom: 20px;">
+                <button onclick="experienceBackward()" class="clickable-box secondary-box floating-box body-link material-symbols-outlined" style="width: auto">arrow_back</button>
+                <button onclick="experienceForward()" class="clickable-box secondary-box floating-box body-link material-symbols-outlined" style="width: auto">arrow_forward</button>
             </div>
         </div>
-        </a>
-    </div>
+
+        <!-- Portfolio -->
+        <div id="portfolio" class="flex-container flex-direction-column flex-align-center" style="display: none; padding-top: 5vh; padding-bottom: 10vh; padding-right: 10px; padding-left: 10px">
+            <h1 id="portfoliotitle" style="font-size: 2em">Portfolio (1/2)</h1>
+            <p>Take a look at some of my notable projects, assignments, and works that I'm proud of!</p>
+
+            <!-- Portfolio Page 1 -->
+            <div id="portfolio1" style="display: block">
+                <h2>Bradley CS 101 Projects and Assignments</h2>
+                <p class="smaller">While at Bradley, I was ahead in my introductory CS 101 course as a <time datetime="2022">Freshmen</time>. In order to showcase my abilities, I placed all my class projects and assignments onto Github.</p>
+                <button class="clickable-box secondary-box floating-box body-link">
+                    <a href="https://github.com/Conmmander/Bradley_CS_101_Java_Projects" target="_blank" rel="noopener noreferrer">Project Link</a>
+                </button>
+                <h2>Website</h2>
+                <p class="smaller">To showcase my work and ability, I decided it would make sense to create a website to do so. As such, this website exists. It's worth noting there's a few iterations of it.
+                    This specific iteration is version 2, which showcases a bit more JavaScript and attempts to optimize for search engines.</p>
+                <button class="clickable-box secondary-box floating-box body-link">
+                    <a href="https://github.com/Conmmander/conmmander.github.io" target="_blank" rel="noopener noreferrer">Website Source</a>
+                </button>
+                <h2>Video Game Frameworks</h2>
+                <p class="smaller">On the popular gaming platform, Roblox, I worked for a large part of a year on a game framework called 'wAVE', which was meant to bring Halo styled combat to Roblox. While it never released, it's a large project worth showcasing none the less. I do not own the project source, so please reach out if it is not viewable.</p>
+                <button class="clickable-box secondary-box floating-box body-link">
+                    <a href="https://github.com/Zenthial/wave" target="_blank" rel="noopener noreferrer">Project Source</a>
+                </button>
+            </div>
+
+            <!-- Portfolio Page 2 -->
+            <div id="portfolio2" style="display: none">
+                <h2>Bradley CS 101 Projects and Assignments</h2>
+                <p class="smaller">Another topic I enjoy diving into is digital works of art. All of these pieces are works that I have created.</p><br>
+                
+                <!-- The image carousel -->
+                <div style="border-radius: 20px;" class="secondary-box floating-box">
+                    <div>
+                        <img style="height: min(25.76vh, 15vw)" id="portback" src="./src/image_showcase/showcase_10.png" alt="showcase_12">
+                        <img style="height: min(45.76vh, 25vw)" id="portcurrent" src="./src/image_showcase/showcase_11.png" alt="showcase_12">
+                        <img style="height: min(25.76vh, 15vw)" id="portforward" src="./src/image_showcase/showcase_12.png" alt="showcase_12">
+                    </div>
+                    <div style="position: fixed; bottom: 60px;">
+                        <button onclick="portfolioBackward()" class="clickable-box secondary-box floating-box body-link material-symbols-outlined" style="width: auto">arrow_back</button>
+                        <button onclick="portfolioForward()" class="clickable-box secondary-box floating-box body-link material-symbols-outlined" style="width: auto">arrow_forward</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left/Right Portfolio Buttons -->
+            <div style="position: fixed; bottom: 20px;">
+                <button onclick="portfolioPGBackward()" class="clickable-box secondary-box floating-box body-link material-symbols-outlined" style="width: auto">arrow_back</button>
+                <button onclick="portfolioPGForward()" class="clickable-box secondary-box floating-box body-link material-symbols-outlined" style="width: auto">arrow_forward</button>
+            </div>
+        </div>
+
+        <!-- Contacts -->
+        <div id="contact" class="flex-container flex-direction-column flex-align-center" style="display: none; padding-top: 5vh; padding-bottom: 10vh; padding-right: 10px; padding-left: 10px">
+            <h1 style="font-size: 2em">Contact Information</h1>
+            <p>I can be contacted through any of the following means. I would prefer an email over anything else.</p>
+            <button class="clickable-box secondary-box floating-box body-link">
+                <a href="tel:847-340-4582">Phone - (847) 340-4582</a>
+            </button>
+            <button class="clickable-box secondary-box floating-box body-link">
+                <a href="https://www.linkedin.com/in/ryan-dodd-171a30249/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </button>
+            <button class="clickable-box secondary-box floating-box body-link">
+                <a href="https://github.com/Conmmander/" target="_blank" rel="noopener noreferrer">GitHub</a><br>
+            </button>
+            <button class="clickable-box secondary-box floating-box body-link">
+                <a href="mailto:ryan@ryandodd">Email</a><br>
+            </button>
+        </div>
+    </main>
 </body>
-</html>

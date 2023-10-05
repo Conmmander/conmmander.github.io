@@ -36,6 +36,14 @@ function loadPortfolio() {
 
 }
 
+function loadExperience() {
+    for (let i = 1; i <= TOTAL_EXPERIENCE_PAGES; i++) {
+        document.getElementById('experience'+i).style.display = "none";
+    }
+    document.getElementById('experience'+currentExperiencePage).style.display = "block";
+    document.getElementById('experiencetitle').innerText = "Experience (" + currentExperiencePage + "/" + TOTAL_EXPERIENCE_PAGES + ")";
+}
+
 function portfolioForward() {
     if (currentPortfolioImg + 1 > TOTAL_PORTFOLIO_IMAGES) {
         currentPortfolioImg = 1;
@@ -52,4 +60,24 @@ function portfolioBackward() {
         currentPortfolioImg--;
     }
     loadPortfolio();
+}
+
+function experienceForward() {
+    if (currentExperiencePage + 1 > TOTAL_EXPERIENCE_PAGES) {
+        currentExperiencePage = 1;
+    } else {
+        currentExperiencePage++;
+    }
+    console.log(currentExperiencePage);
+    loadExperience();
+}
+
+function experienceBackward() {
+    if (currentExperiencePage - 1 <= 0) {
+        currentExperiencePage = TOTAL_EXPERIENCE_PAGES;
+    } else {
+        currentExperiencePage--;
+    }
+    console.log(currentExperiencePage);
+    loadExperience();
 }

@@ -18,6 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;800&display=swap" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&family=Space+Mono&display=swap" rel="stylesheet" type="text/css">
+
+    <!-- Icons from Google -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <!-- Page core -->
@@ -30,17 +33,17 @@
             </div>
             <h1 style="font-size: 1em">Ryan Dodd</h1>
             <h2 style="font-size: 1em">Computer Science Major and Creative Maker</h2><br>
-            <button class="clickable-box secondary-box floating-box">
-                <a onclick="about()">About</a>
+            <button onclick="about()" class="clickable-box secondary-box floating-box">
+                <a>About</a>
             </button>
-            <button class="clickable-box secondary-box floating-box">
-                <a onclick="experience()">Experience</a>
+            <button onclick="experience()" class="clickable-box secondary-box floating-box">
+                <a>Experience</a>
             </button>
-            <button class="clickable-box secondary-box floating-box">
-                <a onclick="portfolio()">Portfolio</a>
+            <button onclick="portfolio()" class="clickable-box secondary-box floating-box">
+                <a>Portfolio</a>
             </button>
-            <button class="clickable-box secondary-box floating-box">
-                <a onclick="contact()">Contact</a>
+            <button onclick="contact()" class="clickable-box secondary-box floating-box">
+                <a>Contact</a>
             </button>
             <button class="clickable-box secondary-box floating-box">
                 <a href="./src/full_resume.pdf" target="_blank" rel="noopener noreferrer" download>Resume</a>
@@ -68,28 +71,56 @@
 
         <!-- Experience -->
         <div id="experience" class="flex-container flex-direction-column flex-align-center" style="display: none; padding-top: 5vh; padding-bottom: 10vh; padding-right: 10px; padding-left: 10px">
-            <h1 style="font-size: 2em">Experience</h1>
-            <p>I have a fair amount of experience in a few different fields, including IT, Programming, and construction.</p><br>
-            <h2>Programmer - Self Employed (<time datetime="2018-1">January 2018</time> - Present)</h2>
-            <p class="smaller">I have been programming for 5 years, and have experience in a variety of languages. 
-                I have worked on projects in Python, Java, JavaScript, Lua, C++, and HTML. 
-                Most of my projects have been utilized to assist in data management, and communications. 
-                In addition, I've composed contracts for payment agreements, and have served as a project lead for a small team, helping to educate new programmers in workflow, code management, and programming in teams. 
-                I also taught myself how to use the Adobe Creative Cloud suite of tools for logo creation, and more.
-            </p>
-            <h2>IT Service Desk Consultant - Bradley University (<time datetime="2023-4">April 2023</time> - Present)</h2>
-            <p class="smaller">Starting near the end of the school year as a freshmen, I took on work at the IT Servicee Desk at Bradley.
-                I ended up living on campus over the summer, and continue to work at the desk during the school year, putting in approximately 10 hours a week.
-            </p>
-            <h2>Residential Advisor - Bradley University (<time datetime="2023-1">January 2023</time> - Present)</h2>
-            <p class="smaller">As an Residential Advisor, it is my responsibility to plan monthly floor programs for the residents of my dorm's floor. 
-                In addition to this, I am obligated to manage and budget our floor funds, hand out packages for certain periods during the week, and answer the phone when on coverage/weekend duty. 
-                I am also expected to interact with my residents and get to know them.
-                I was promoted after my first semester on the job to be a Residential Advisor, having served prior as an Assistant Residential Advisor.
-                Because of this promotion, I am also obligated to train new ARAs, and was placed on an Honors Floor community, which has additional event requirements as well.
-                Within this role, I have also taken on the responsibility of managing the residential management system, StarRez.
-                As such, I work with a custom SQL offshoot called StarQL, write email templates, manage security keys, and much more to assist the university with resident management.
-            </p>
+            <h1 id="experiencetitle" style="font-size: 2em">Experience (1/2)</h1>
+            <p>I have a fair amount of experience in a few different fields, including, but not limited to, IT, Programming, and construction.</p><br>
+            
+            <!-- Experience Page 1 -->
+            <div id="experience1" style="display: block">
+                <h2>Programmer - Self Employed (<time datetime="2018-1">January 2018</time> - Present)</h2>
+                <p class="smaller">I have been programming for 5 years, and have experience in a variety of languages. 
+                    I have worked on projects in Python, Java, JavaScript, Lua, C++, and HTML. 
+                    Most of my projects have been utilized to assist in data management, and communications. 
+                    In addition, I've composed contracts for payment agreements, and have served as a project lead for a small team, helping to educate new programmers in workflow, code management, and programming in teams. 
+                    I also taught myself how to use the Adobe Creative Cloud suite of tools for logo creation, and more. Currenty, I am also learning dart, so that I can produce applications using flutter.
+                </p>
+                <h2>IT Service Desk Consultant - Bradley University (<time datetime="2023-4">April 2023</time> - Present)</h2>
+                <p class="smaller">Starting near the end of the school year as a freshmen, I took on work at the IT Servicee Desk at Bradley.
+                    I ended up living on campus over the summer, and continue to work at the desk during the school year, putting in approximately 10 hours a week.
+                </p>
+                <h2>Residential Advisor - Bradley University (<time datetime="2023-1">January 2023</time> - Present)</h2>
+                <p class="smaller">As an Residential Advisor, it is my responsibility to plan monthly floor programs for the residents of my dorm's floor. 
+                    In addition to this, I am obligated to manage and budget our floor funds, hand out packages for certain periods during the week, and answer the phone when on coverage/weekend duty. 
+                    I am also expected to interact with my residents and get to know them.
+                    I was promoted after my first semester on the job to be a Residential Advisor, having served prior as an Assistant Residential Advisor.
+                    Because of this promotion, I am also obligated to train new ARAs, and was placed on an Honors Floor community, which has additional event requirements as well.
+                    Within this role, I have also taken on the responsibility of managing the residential management system, StarRez.
+                    As such, I work with a custom SQL offshoot called StarQL, write email templates, manage security keys, and much more to assist the university with resident management.
+                </p>
+            </div>
+
+            <!-- Experience Page 2 -->
+            <div id="experience2" style="display: none">
+                <h2>Contractor - Firchau Construction (<time datetime="2022-5">May 2022</time> - <time datetime="2022-8">August 2022</time>)</h2>
+                <p class="smaller">As a summer job, I worked for a local carpenter down the street. I was responsible for showing up Monday-Saturday to work, regaurdless of the weather. 
+                    In addition, I took additional responsibilities creating advertisements for the company, gaining proficency in planning and drawing decks, and translating Spanish for my boss.
+                </p>
+                <h2>Day Camp Counselor - Three Fires Council, BSA (<time datetime="2021-5">May 2021</time> - <time datetime="2021-8">August 2021</time>)</h2>
+                <p class="smaller">I commuted to Elgin, Illinois from Monday - Thursday. While there, I worked with fifth and sixth graders at a day camp. 
+                    I was responsible for ensuring the childrens safety, and helping the instructors manage the outdoor classroom setting.
+                </p>
+                <h2>Wednesday Night Assistant - St. Petronille Parish (<time datetime="2018-9">September 2018</time> - <time datetime="2022-5">May 2022</time>)</h2>
+                <p class="smaller">Through High School, I worked weekly during Wednesday nights at my church. 
+                    I was responsible for making hundreds of copies of grade level materials, folding and stapling as necessary. 
+                    In addition, I took on responsibilities of technical maintence of TVs in the classrooms, and facilitated playing movies during class periods. 
+                    I was also given a set of keys, and expected to open and close doors during specified times.
+                </p>
+            </div>
+
+            <!-- Left/Right Experience Buttons -->
+            <div style="position: fixed; bottom: 20px;">
+                <button onclick="experienceBackward()" class="clickable-box secondary-box floating-box body-link material-symbols-outlined" style="width: auto">arrow_back</button>
+                <button onclick="experienceForward()" class="clickable-box secondary-box floating-box body-link material-symbols-outlined" style="width: auto">arrow_forward</button>
+            </div>
         </div>
 
         <!-- Portfolio -->

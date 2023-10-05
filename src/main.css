@@ -108,6 +108,7 @@ p.smaller {
     text-decoration: none;
     display: inline-block;
     border: none;
+    text-align: center;
 }
 
 .body-link {

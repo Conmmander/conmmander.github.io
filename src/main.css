@@ -38,6 +38,7 @@ a {
     text-align: center;
     vertical-align: middle;
     size: auto;
+    line-height: 18px;
 }
 
 ul {
@@ -91,6 +92,11 @@ img {
 
 .flex-direction-column {
     flex-direction: column;
+    text-align: center;
+}
+
+.flex-direction-row {
+    flex-direction: row;
     text-align: center;
 }
 

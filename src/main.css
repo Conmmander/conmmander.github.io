@@ -74,6 +74,13 @@ img {
     border-radius: 50%
 }
 
+/* Hide on mobile */
+@media (max-width: 767px) {
+    .hidden-mobile {
+        display: none;
+ }
+}
+
 /* Color Adjustments */
 .primary-box {
     background-color: var(--primary);

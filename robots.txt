@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-#TODO: Sitemap
+Sitemap: https://ryandodd.org/sitemap.xml

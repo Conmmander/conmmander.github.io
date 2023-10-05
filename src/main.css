@@ -1,0 +1,147 @@
+/* Global CSS Variables */
+/* Check out a monospace font
+pick 2 fonts (fonts are color, typeface
+*/
+:root {
+    --primary: #C3D898;
+    --secondary: #33658A;
+    --off_white: #EEF7FC;
+    --off_black: #000010;
+    --on_primary: var(--off_black);
+    --on_secondary: var(--off_white);
+    --accent_color: #880D1E;
+    --header: 'Martian Mono', monospace;
+    --body: Space Mono - Google Fonts
+}
+
+/* Builtin Element Modifiers */
+body {
+    background-color: var(--primary);
+    margin: 0;
+}
+
+h1 {
+    font-family: var(--header);
+    font-weight: 800;
+}
+
+h2 {
+    font-family: var(--header);
+    font-weight: 300;
+}
+
+a {
+    font-family: var(--body);
+    font-weight: 300;
+    text-decoration: none;
+    color: var(--on_secondary);
+    text-align: center;
+    vertical-align: middle;
+    size: auto;
+    line-height: 18px;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: var(--body);
+    font-weight: 300;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+p.smaller {
+    font-size: 1em;
+}
+
+img {
+    object-fit: contain;
+    width: auto;
+    padding: 10px;
+}
+
+/* Custom Styles */
+.full-height {
+    height: 100vh;
+}
+
+.circle {
+    border-radius: 50%
+}
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+    .hidden-mobile {
+        display: none;
+ }
+}
+
+/* Color Adjustments */
+.primary-box {
+    background-color: var(--primary);
+    color: var(--on_primary);
+}
+
+.secondary-box {
+    background-color: var(--secondary);
+    color: var(--on_secondary);
+}
+
+/* Flex data */
+.flex-container {
+    display: flex;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+    text-align: center;
+}
+
+.flex-direction-row {
+    flex-direction: row;
+    text-align: center;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.floating-box {
+    box-shadow: rgba(0, 0, 0, 0.362) 0px 0px 4px 4px;
+}
+
+.clickable-box {
+    background-color: var(--accent_color);
+    height: 5%;
+    width: 60%;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    text-align: center;
+}
+
+.body-link {
+    height: 5%;
+    width: 15%;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+}
+
+.clickable-box.floating-box:hover {
+    background-color: #6b0a17;
+}

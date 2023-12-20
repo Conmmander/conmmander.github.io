@@ -10,6 +10,7 @@ function about() {
     document.getElementById('about').style.display = "flex";
     document.getElementById('experience').style.display = "none";
     document.getElementById('portfolio').style.display = "none";
+    document.getElementById("certifications").style.display = "none";
     document.getElementById('contact').style.display = "none";
 }
 
@@ -17,6 +18,7 @@ function experience() {
     document.getElementById('about').style.display = "none";
     document.getElementById('experience').style.display = "flex";
     document.getElementById('portfolio').style.display = "none";
+    document.getElementById("certifications").style.display = "none";
     document.getElementById('contact').style.display = "none";
 }
 
@@ -24,6 +26,15 @@ function portfolio() {
     document.getElementById('about').style.display = "none";
     document.getElementById('experience').style.display = "none";
     document.getElementById('portfolio').style.display = "flex";
+    document.getElementById("certifications").style.display = "none";
+    document.getElementById('contact').style.display = "none";
+}
+
+function certifications() {
+    document.getElementById('about').style.display = "none";
+    document.getElementById('experience').style.display = "none";
+    document.getElementById('portfolio').style.display = "none";
+    document.getElementById("certifications").style.display = "flex";
     document.getElementById('contact').style.display = "none";
 }
 
@@ -31,6 +42,7 @@ function contact() {
     document.getElementById('about').style.display = "none";
     document.getElementById('experience').style.display = "none";
     document.getElementById('portfolio').style.display = "none";
+    document.getElementById("certifications").style.display = "none";
     document.getElementById('contact').style.display = "flex";
 }
 

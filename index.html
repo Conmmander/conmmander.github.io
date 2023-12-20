@@ -19,6 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;800&display=swap" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&family=Space+Mono&display=swap" rel="stylesheet" type="text/css">
 
+    <!-- Prefetch (not to be confused with Preload) -->
+    <link rel="prefetch" href="https://www.hackerrank.com/certificates/iframe/ed4901101940" as="document">
+
     <!-- Icons from Google -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
@@ -36,6 +39,7 @@
             <button onclick="about()" class="clickable-box secondary-box floating-box"><span class="material-symbols-outlined" style="vertical-align: middle">library_books</span>About</button>
             <button onclick="experience()" class="clickable-box secondary-box floating-box"><span class="material-symbols-outlined" style="vertical-align: middle">build</span>Experience</button>
             <button onclick="portfolio()" class="clickable-box secondary-box floating-box"><span class="material-symbols-outlined" style="vertical-align: middle">image</span>Portfolio</button>
+            <button onclick="certifications()" class="clickable-box secondary-box floating-box"><span class="material-symbols-outlined" style="vertical-align: middle">workspace_premium</span>Certifications</button>
             <button onclick="contact()" class="clickable-box secondary-box floating-box"><span class="material-symbols-outlined" style="vertical-align: middle">call</span>Contact</button>
             <button class="clickable-box secondary-box floating-box">
                 <span class="material-symbols-outlined" style="vertical-align: middle" >description</span>
@@ -52,6 +56,7 @@
             <h1 style="font-size: 2em">About Me</h1>
             <p style="font-size: 1.5em">I am a Computer Science major at Bradley University in Peoria. On top of this, I am working toward a double minor in mathematics and music. I regularly can be found programming, practicing my cello, or simply in the outdoors, camping.</p><br>
             <p style="font-size: 1.5em">Beyond this, I also enjoy 3D printing, video editing, playing with my dogs, and reading. I'm not really a web design expert.</p><br>
+            <p style="font-size: 1.5em">I am regularly involved with scouts, serving as the Order of the Arrow, Lowaneu Allanque Lodge's Vigil Chair, and Immediate Past Lodge Chief. I'm also the Venturing Territory 6 VOA's President. Additionally, I play the cello in the Bradley Symphony Orchestra, am apart of the rock climbing club, and serve as the Campus Affairs Chairperson for the Bradley Student Senate.</p><br>
             <h1 style="font-size: 2em">My Awards</h1>
             <ul>
                 <li><p>Eagle Scout</p></li>
@@ -165,6 +170,13 @@
                 <button onclick="portfolioPGBackward()" class="clickable-box secondary-box floating-box body-link material-symbols-outlined" style="width: auto">arrow_back</button>
                 <button onclick="portfolioPGForward()" class="clickable-box secondary-box floating-box body-link material-symbols-outlined" style="width: auto">arrow_forward</button>
             </div>
+        </div>
+
+        <!-- Certifications -->
+        <!-- These come from various places, including Hackerrank -->
+        <div id="certifications" class="flex-container flex-direction-column flex-align-center" style="display: none; padding-top: 5vh; padding-bottom: 5vh; padding-right: 10px; padding-left: 10px">
+            <h1 style="font-size: 2em">Certifications</h1>
+            <iframe src="https://www.hackerrank.com/certificates/iframe/ed4901101940" title="Hackerrank Basic Java Certificate" style="width: 70vw; height: 60vh"></iframe>
         </div>
 
         <!-- Contacts -->

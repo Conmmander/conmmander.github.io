@@ -9,7 +9,8 @@ class About extends StatelessWidget {
 
     return Scaffold(
       body: Center(
-        child: Column(
+        child: ListView(
+          padding: const EdgeInsets.all(8.0),
           children: [
             Card(
               shadowColor: theme.colorScheme.shadow,

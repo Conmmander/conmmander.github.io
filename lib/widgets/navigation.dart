@@ -141,6 +141,7 @@ class Navigation extends StatelessWidget {
             const NavigationButton(label: "Home", route: "/", icon: Icons.home),
             const NavigationButton(label: "About", route: "/about", icon: Icons.person),
             const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist),
+            const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code),
             const NavigationButton(label: "Certifications", route: "/certifications", icon: Icons.fact_check),
           ]
         ),

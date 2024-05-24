@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:portfolio_site/pages/certifications.dart';
 
 import './widgets/navigation.dart';
 
 import './pages/home.dart';
 import './pages/about.dart';
 import './pages/experience.dart';
+import './pages/skills.dart';
 import './pages/certifications.dart';
 
 void main() {
@@ -31,6 +31,12 @@ final GoRouter _router = GoRouter(
           path: 'experience',
           builder: (BuildContext context, GoRouterState state) {
             return const Navigation(page: Experience());
+          },
+        ),
+        GoRoute(
+          path: 'skills',
+          builder: (BuildContext context, GoRouterState state) {
+            return const Navigation(page: Skills());
           },
         ),
         GoRoute(

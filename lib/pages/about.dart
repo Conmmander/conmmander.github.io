@@ -23,19 +23,6 @@ class About extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Container(
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle
-                        ),
-                        clipBehavior: Clip.hardEdge,
-                        width: 100,
-                        height: 100,
-                        margin: const EdgeInsets.all(10),
-                        child: const Image(
-                          image: AssetImage('assets/img/personal/me.jpeg'),
-                          semanticLabel: 'Ryan Dodd',
-                        ),
-                      ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text('Education',

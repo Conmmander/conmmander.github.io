@@ -5,20 +5,50 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+
     return Scaffold(
       body: Center(
-        child: Column(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Constantly Innovating. Constantly Improving.',
-              style: TextStyle(
-                fontWeight: FontWeight.bold
-              )
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(100.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: theme.colorScheme.shadow,
+                          blurRadius: 4.0,
+                          spreadRadius: 1.0,
+                          offset: const Offset(0, 0)
+                        )
+                      ],
+                      shape: BoxShape.circle
+                    ),
+                    clipBehavior: Clip.hardEdge,
+                    child: Image.asset('assets/img/personal/me.jpeg',
+                      width: 400,
+                      height: 400,
+                      fit: BoxFit.cover
+                    ),
+                  ),
+                )
+              ]
             ),
-            Text("Technology doesn't wait. Neither should you.",
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold
-              )
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Programmer\nTech Enthusiast",
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: theme.colorScheme.onPrimary
+                  )
+                ),
+              ]
             ),
           ],
         ),

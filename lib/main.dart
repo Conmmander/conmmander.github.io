@@ -7,7 +7,6 @@ import './pages/home.dart';
 import './pages/about.dart';
 import './pages/experience.dart';
 import './pages/skills.dart';
-import './pages/certifications.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,12 +36,6 @@ final GoRouter _router = GoRouter(
           path: 'skills',
           builder: (BuildContext context, GoRouterState state) {
             return const Navigation(page: Skills());
-          },
-        ),
-        GoRoute(
-          path: 'certifications',
-          builder: (BuildContext context, GoRouterState state) {
-            return const Navigation(page: Certifications());
           },
         ),
       ],

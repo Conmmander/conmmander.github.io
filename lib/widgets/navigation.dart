@@ -3,80 +3,49 @@ import 'package:go_router/go_router.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Socials extends StatelessWidget {
-  const Socials({super.key});
+class SocialButton extends StatelessWidget {
+  const SocialButton({super.key, required this.url, required this.icon, required this.tooltip});
+
+  final String url;
+  final IconData icon;
+  final String tooltip;
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
 
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: FloatingActionButton.small(
+        heroTag: tooltip,
+        backgroundColor: theme.colorScheme.primary,
+        tooltip: tooltip,
+        onPressed: () {
+          launchUrl(Uri.parse(url),
+            mode: LaunchMode.externalApplication
+          );
+        },
+        shape: const CircleBorder(),
+        child: FaIcon(icon,
+          color: theme.colorScheme.onPrimary
+        ),
+      ),
+    );
+  }
+}
+
+class Socials extends StatelessWidget {
+  const Socials({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: FloatingActionButton.small(
-            backgroundColor: theme.colorScheme.primary,
-            tooltip: "LinkedIn",
-            onPressed: () {
-              launchUrl(Uri.parse('https://www.linkedin.com/in/ryan-dodd-171a30249/'),
-                mode: LaunchMode.externalApplication
-              );
-            },
-            shape: const CircleBorder(),
-            child: FaIcon(FontAwesomeIcons.linkedinIn,
-              color: theme.colorScheme.onPrimary
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: FloatingActionButton.small(
-            backgroundColor: theme.colorScheme.primary,
-            tooltip: "Github",
-            onPressed: () {
-              launchUrl(Uri.parse('https://github.com/Conmmander'),
-                mode: LaunchMode.externalApplication
-              );
-            },
-            shape: const CircleBorder(),
-            child: Icon(FontAwesomeIcons.github,
-              color: theme.colorScheme.onPrimary
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: FloatingActionButton.small(
-            backgroundColor: theme.colorScheme.primary,
-            tooltip: "ryan@ryandodd.org",
-            onPressed: () {
-              launchUrl(Uri.parse('mailto:ryan@ryandodd.org'),
-                mode: LaunchMode.externalApplication
-              );
-            },
-            shape: const CircleBorder(),
-            child: Icon(FontAwesomeIcons.google,
-              color: theme.colorScheme.onPrimary
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: FloatingActionButton.small(
-            backgroundColor: theme.colorScheme.primary,
-            tooltip: "(847) 340 - 4582",
-            onPressed: () {
-              launchUrl(Uri.parse('tel:+18473404582'),
-                mode: LaunchMode.externalApplication
-              );
-            },
-            shape: const CircleBorder(),
-            child: Icon(Icons.phone,
-              color: theme.colorScheme.onPrimary
-            ),
-          ),
-        ),
+        SocialButton(url: 'https://www.linkedin.com/in/ryan-dodd-171a30249/', icon: FontAwesomeIcons.linkedinIn, tooltip: "LinkedIn"),
+        SocialButton(url: 'https://github.com/Conmmander', icon: FontAwesomeIcons.github, tooltip: "GitHub"),
+        SocialButton(url: 'mailto:ryan@ryandodd.org', icon: FontAwesomeIcons.google, tooltip: "ryan@ryandodd.org"),
+        SocialButton(url: 'tel:+18473404582', icon: FontAwesomeIcons.phone, tooltip: "(847) 340 - 4582")
       ]
     );
   }
@@ -95,7 +64,7 @@ class NavigationButton extends StatelessWidget {
 
     return TextButton.icon(
       onPressed: () {
-        context.go(route);
+        context.push(route);
       },
       label: Text(label,
         style: TextStyle(
@@ -142,7 +111,6 @@ class Navigation extends StatelessWidget {
             const NavigationButton(label: "About", route: "/about", icon: Icons.person),
             const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist),
             const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code),
-            const NavigationButton(label: "Certifications", route: "/certifications", icon: Icons.fact_check),
           ]
         ),
       ),

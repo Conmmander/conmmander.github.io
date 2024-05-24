@@ -1,56 +1,120 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class ExperienceCard extends StatelessWidget {
-  const ExperienceCard({super.key, required this.company, required this.date, required this.title, required this.description});
+class ExperienceCard extends StatefulWidget {
+  const ExperienceCard({super.key, required this.company, required this.title, required this.description, required this.link, required this.companyLogo});
 
   final String company;
-  final String date;
   final String title;
   final String description;
+  final String link;
+  final String companyLogo;
+
+  @override
+  State<ExperienceCard> createState() => _ExperienceCardState();
+}
+
+class _ExperienceCardState extends State<ExperienceCard> {
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
+
+    
     ThemeData theme = Theme.of(context);
 
-    return Card(
-      shadowColor: theme.colorScheme.shadow,
-      color: theme.colorScheme.tertiaryContainer,
-      elevation: 8,
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(company, 
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: theme.colorScheme.onPrimaryContainer
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(right: 50)
-                ),
-                Text(date,
-                  textAlign: TextAlign.right,
+    return SizedBox(
+      height: 150,
+      width: 800,
+      child: MouseRegion(
+        onEnter: (event) {
+          setState(() {
+            isHovered = true;
+          });
+        },
+        onExit: (event) {
+          setState(() {
+            isHovered = false;
+          });
+        },
+        child: GestureDetector(
+          onTap: () => showDialog<String>(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+              backgroundColor: theme.colorScheme.inversePrimary,
+              icon: SizedBox(
+                height: 150,
+                width: 200,
+                child: Image.asset(widget.companyLogo)
+              ),
+              title: Text("${widget.company} | ${widget.title}"),
+              content: Text(widget.description,
+                softWrap: true,
+                overflow: TextOverflow.clip
+              ),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () => Navigator.pop(context, 'OK'),
+                  child: const Text('Close'),
                 ),
               ],
             ),
-            Text(title,
-              textAlign: TextAlign.left,
-              style: const TextStyle(
-                fontStyle: FontStyle.italic
-              )
-            ),
-            Text(description,
-              textAlign: TextAlign.left
-            ),
-          ]
+          ),
+          child: Card(
+            elevation: isHovered ? 20 : 12,
+            color: isHovered ? theme.colorScheme.primary : theme.colorScheme.onSurface,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      height: 150,
+                      width: 200,
+                      child: Image.asset(widget.companyLogo)
+                    ),
+                  ),
+                  Flexible(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(widget.title, 
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: isHovered ? theme.colorScheme.onSecondary : theme.colorScheme.primary
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(widget.description, 
+                          style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            color: isHovered ? theme.colorScheme.onSecondary : theme.colorScheme.primary
+                          ),
+                          softWrap: true,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.left,
+                        ),
+                      ]
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: IconButton(
+                      icon: const Icon(Icons.link_sharp),
+                      onPressed: () {
+                        launchUrl(Uri.parse(widget.link),
+                        mode: LaunchMode.externalApplication);
+                      }
+                    ),
+                  ),
+                ]
+              ),
+            )
+          ),
         ),
-      )
+      ),
     );
   }
 }
@@ -60,22 +124,42 @@ class Experience extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ListView(
-          padding: const EdgeInsets.all(8.0),
-          children: const <ExperienceCard>[
-            ExperienceCard(company: "Bradley University/United States Airforce/University of Dayton Research Institute", date: "February 2024 - Present", title: "Computer Science XR Research Assistant", description: "Worked as a research assistant with extended reality applications for the United States Airforce."),
-            ExperienceCard(company: "Bradley University", date: "August 2023 - Present", title: "Senior IT Service Desk Consultant", description: ""),
-            ExperienceCard(company: "Bradley University", date: "April 2023 - August 2023", title: "IT Service Desk Consultant", description: "As a Service Desk Consultant at Bradley University since April 2023, I diagnose technical issues on laptops and various devices, provide phone and remote support, manage the SolarWinds ticketing system, and offer assistance through email, while also creating detailed documentation for common issues."),
-            ExperienceCard(company: "Bradley University Residential Living", date: "August 2023 - Present", title: "Resident Advisor", description: "As a Resident Advisor at Bradley University since January 2023, I advanced from the role of Assistant Resident Advisor in May 2023, orchestrating weekly floor programs to nurture community among residents, implementing budget management strategies for optimal fund utilization, contributing to weekly security coverage for resident safety, and assisting in the management of StarRez residential software by introducing new features and ensuring seamless operation."),
-            ExperienceCard(company: "Bradley University Residential Living", date: "January 2023 - August 2023", title: "Assistant Resident Advisor", description: "As an Assistant Resident Advisor at Bradley University, I autonomously managed a floor for several weeks, coordinated weekly programs to cultivate community among residents, implemented budget management strategies for optimal fund allocation, and contributed to weekly security coverage for resident safety."),
-            ExperienceCard(company: "Firchau Construction", date: "May 2022 - August 2022", title: "Contractor", description: "At Firchau Construction, I served as a contractor from May 23, 2022, to August 17, 2022. During this period, my responsibilities included working on Trex deck construction and maintenance from 8 am to 4 pm. I demonstrated proficiency in designing decks using Menards Deck Builder and Simpson Strong-Tie deck planner. Moreover, I actively contributed to the company's promotional efforts by producing impactful video advertisements using Adobe Premiere Pro. In addition to my construction role, I played a key part in illustrating deck plans to aid customer visualization and facilitate the permit acquisition process. Furthermore, I utilized my language skills by interpreting Spanish for effective communication with my boss."),
-            ExperienceCard(company: "Three Fires Council, Scouting America", date: "May 2021 - August 2021", title: "Day Camp Counselor", description: "Monday through Thursday, from 8:30 to 5:00, I worked with children in 5th and 6th grade, serving as their counselor. In this role, I managed the students throughout the day, administering first aid when necessary, and providing assistance in teaching to support the instructors. I also procured games for the children, ensuring their hydration and fostering an environment where they respected each other and other staff members."),
-            ExperienceCard(company: "St. Petronille Parish", date: "September 2018 - May 2022", title: "Wednesday Night Assistant", description: "Every Wednesday, I dedicated my time from 3:30 to 9:00 to a diverse range of responsibilities. This encompassed tasks such as managing movie sessions, executing mass paper duplication, labeling documents, and organizing them systematically. My role extended to timely door unlocking and locking, playing a crucial part in maintaining the safety and security of the campus environment. Additionally, I actively contributed to the operational efficiency of the educational program by assembling copies of materials for grade-level leads, facilitating their seamless planning for the upcoming week. Moreover, I collaborated closely with grade-level leads, ensuring the smooth execution of their technology-related requirements, including video and slideshow presentations. My multifaceted role involved receiving individuals during class times, emphasizing the importance of maintaining a secure and structured campus environment."),
-          ],
+    return const Scaffold(
+      body: Padding(
+        padding: EdgeInsets.all(10.0),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ExperienceCard(company: "Bradley University/University of Dayton Resaerch Institute/U.S. Airforce", title: "Computer Science XR Research Assistant", description: "●	Created tools and applications for the military utilizing various extended reality devices", link: "https://www.bradley.edu/heres-the-latest/story.dot?id=64f44e96f4c2674394ba8c0a630821e2", companyLogo: "assets/img/experience_logos/airforce-logo.png"),
+                  ExperienceCard(company: "St. Petronille Parish", title: "Wednesday Night Assistant", description: "●	Assembled copies of material for grade-level leads, allowing them to plan the next week’s program\n●	Corroborated with grade-level leads on technology, ensuring their video and slideshow presentations went as planned\n●	Received people during class times while also unlocking and locking doors, ensuring the safety of the campus from anyone who should not be there", link: "https://www.stpetschurch.org/", companyLogo: "assets/img/experience_logos/stpets-logo.png"),
+                  ExperienceCard(company: "Firchau Construction", title: "Contractor", description: "●	Produced promotional video advertisements to enhance company visibility\n●	Contributed to deck construction, ensuring timely completion\n●	Illustrated detailed deck plans to facilitate customer visualization and permit acquisition\n●	Provided Spanish interpretation support for effective communication with the boss", link: "https://firchauconstructioncwc.com/", companyLogo: "assets/img/experience_logos/firchauconstruction-logo.png"),
+                  ExperienceCard(company: "Three Fires Council", title: "Day Camp Counselor", description: "●	Managed children in grades 5 and 6 for the day\n●	Administered first aid to children who needed it\n●	Aided teaching to children to assist the instructors", link: "https://threefirescouncil.org/", companyLogo: "assets/img/experience_logos/threefires-logo.png"),
+                ]
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ExperienceCard(company: "Bradley University Residential Living", title: "Resident Advisor", description: "●	Managed StarRez residential management software, introducing new features through the SQL-like interface, facilitating smooth transitions between semesters, and maintaining confidentiality\n●	Oversaw a Residential Living Initiative aimed to enhance staff engagement and passion", link: "https://www.bradley.edu/campuslife/reslife/", companyLogo: "assets/img/experience_logos/bradley-logo.png"),
+                  ExperienceCard(company: "Bradley University Residential Living", title: "Assistant Resident Advisor", description: "●	Managed a floor of 34 residents without a partner, while planning 8 additional programs\n●	Aided in the management of the Student Apartment Complex through office management, security, and posters\n●	Served on summer staff and performed rounds of the campus for security", link: "https://www.bradley.edu/campuslife/reslife/", companyLogo: "assets/img/experience_logos/bradley-logo.png"),
+                  ExperienceCard(company: "Bradley University", title: "Senior IT Service Desk Consultant", description: "●	Recreated Service Desk training for consumption by peers and newly hired staff\n●	Tracked down 50 overdue laptop loans and reduced the overdue list to 5 untracked devices", link: "https://www.bradley.edu/", companyLogo: "assets/img/experience_logos/bradley-logo.png"),
+                  ExperienceCard(company: "Bradley University", title: "IT Service Desk Consultant", description: "●	Wrote extensive documentation for a new network registration tool and iPads that rolled out to the campus\n●	Staffed summer orientation sessions, creating connections with first-year students and welcoming them", link: "https://www.bradley.edu/", companyLogo: "assets/img/experience_logos/bradley-logo.png"),
+                ]
+              ),
+            )
+          ]
         ),
-      ),
+      )
     );
   }
 }

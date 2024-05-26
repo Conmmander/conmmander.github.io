@@ -7,8 +7,8 @@ import '../pages/experience.dart';
 import '../pages/skills.dart';
 import '../pages/error.dart';
 
-import 'socialbutton.dart';
-import 'navigationbutton.dart';
+import 'social_button.dart';
+import 'navigation_button.dart';
 
 enum NavigationLocation {
   home,

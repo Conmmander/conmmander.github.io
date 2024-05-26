@@ -20,13 +20,12 @@ class _ExperienceCardState extends State<ExperienceCard> {
 
   @override
   Widget build(BuildContext context) {
-
-    
     ThemeData theme = Theme.of(context);
+    MediaQueryData queryData = MediaQuery.of(context);
 
     return SizedBox(
-      height: 150,
-      width: 800,
+      height: queryData.size.width * 0.07,
+      width: queryData.size.width * 0.41,
       child: MouseRegion(
         onEnter: (event) {
           setState(() {
@@ -44,8 +43,8 @@ class _ExperienceCardState extends State<ExperienceCard> {
             builder: (BuildContext context) => AlertDialog(
               backgroundColor: theme.colorScheme.inversePrimary,
               icon: SizedBox(
-                height: 150,
-                width: 200,
+                height: queryData.size.width * 0.07,
+                width: queryData.size.width * 0.10,
                 child: Image.asset(widget.companyLogo)
               ),
               title: Text("${widget.company} | ${widget.title}"),
@@ -72,8 +71,8 @@ class _ExperienceCardState extends State<ExperienceCard> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
-                      height: 150,
-                      width: 200,
+                      height: queryData.size.width * 0.07,
+                      width: queryData.size.width * 0.10,
                       child: Image.asset(widget.companyLogo)
                     ),
                   ),

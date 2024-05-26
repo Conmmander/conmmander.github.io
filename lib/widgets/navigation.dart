@@ -58,9 +58,34 @@ class Navigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
+    MediaQueryData queryData = MediaQuery.of(context);
+    bool mobilePlatform = queryData.size.width >= 600 ? false : true;
 
     return Scaffold(
+      drawer: mobilePlatform ? Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: theme.colorScheme.onSurface
+              ),
+              child: Text("Ryan Dodd",
+                style: TextStyle(
+                  color: theme.colorScheme.onPrimary,
+                  fontSize: 24
+                )
+              ),
+            ),
+            const NavigationButton(label: "Home", route: "/", icon: Icons.home),
+            const NavigationButton(label: "About", route: "/about", icon: Icons.person),
+            const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist),
+            const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code),
+          ]
+        ),
+      ) : null,
       appBar: AppBar(
+        iconTheme: IconThemeData(color: theme.colorScheme.inversePrimary),
         backgroundColor: theme.colorScheme.onSurface,
         elevation: 5,
         shadowColor: theme.colorScheme.shadow,
@@ -68,10 +93,13 @@ class Navigation extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Ryan Dodd",
-              style: TextStyle(
-                color: theme.colorScheme.onPrimary,
-              )
+            Visibility(
+              visible: !mobilePlatform,
+              child: Text("Ryan Dodd",
+                style: TextStyle(
+                  color: theme.colorScheme.onPrimary,
+                )
+              ),
             ),
             const Padding(
               padding: EdgeInsets.only(
@@ -79,10 +107,10 @@ class Navigation extends StatelessWidget {
                 right: 15
               )
             ),
-            const NavigationButton(label: "Home", route: "/", icon: Icons.home),
-            const NavigationButton(label: "About", route: "/about", icon: Icons.person),
-            const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist),
-            const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Home", route: "/", icon: Icons.home)),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "About", route: "/about", icon: Icons.person)),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist)),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code)),
           ]
         ),
       ),

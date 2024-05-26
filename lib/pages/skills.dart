@@ -8,6 +8,7 @@ class Skills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
+    MediaQueryData queryData = MediaQuery.of(context);
 
     return Scaffold(
       body: Column(
@@ -17,7 +18,7 @@ class Skills extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Text("Programming Languages",
               style: TextStyle(
-                fontSize: 50,
+                fontSize: queryData.size.width *0.026,
                 color: theme.colorScheme.onPrimary
               )
             ),
@@ -40,7 +41,7 @@ class Skills extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Text("IDEs and Editors",
               style: TextStyle(
-                fontSize: 50,
+                fontSize: queryData.size.width *0.026,
                 color: theme.colorScheme.onPrimary
               )
             ),
@@ -61,7 +62,7 @@ class Skills extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Text("Tools and Technology",
               style: TextStyle(
-                fontSize: 50,
+                fontSize: queryData.size.width *0.026,
                 color: theme.colorScheme.onPrimary
               )
             ),

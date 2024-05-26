@@ -6,6 +6,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
+    MediaQueryData queryData = MediaQuery.of(context);
 
     return Scaffold(
       body: Center(
@@ -31,8 +32,8 @@ class Home extends StatelessWidget {
                     ),
                     clipBehavior: Clip.hardEdge,
                     child: Image.asset('assets/img/personal/me.jpeg',
-                      width: 400,
-                      height: 400,
+                      width: queryData.size.width * 0.20,
+                      height: queryData.size.width * 0.20,
                       fit: BoxFit.cover
                     ),
                   ),
@@ -44,7 +45,7 @@ class Home extends StatelessWidget {
               children: [
                 Text("Programmer\nTech Enthusiast",
                   style: TextStyle(
-                    fontSize: 50,
+                    fontSize: queryData.size.width *0.026,
                     color: theme.colorScheme.onPrimary
                   )
                 ),

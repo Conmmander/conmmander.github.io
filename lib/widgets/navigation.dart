@@ -1,37 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-class SocialButton extends StatelessWidget {
-  const SocialButton({super.key, required this.url, required this.icon, required this.tooltip});
+import '../pages/home.dart';
+import '../pages/about.dart';
+import '../pages/experience.dart';
+import '../pages/skills.dart';
+import '../pages/error.dart';
 
-  final String url;
-  final IconData icon;
-  final String tooltip;
+import 'socialbutton.dart';
+import 'navigationbutton.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-
-    return Padding(
-      padding: const EdgeInsets.all(4.0),
-      child: FloatingActionButton.small(
-        heroTag: tooltip,
-        backgroundColor: theme.colorScheme.primary,
-        tooltip: tooltip,
-        onPressed: () {
-          launchUrl(Uri.parse(url),
-            mode: LaunchMode.externalApplication
-          );
-        },
-        shape: const CircleBorder(),
-        child: FaIcon(icon,
-          color: theme.colorScheme.onPrimary
-        ),
-      ),
-    );
-  }
+enum NavigationLocation {
+  home,
+  about,
+  experience,
+  skills,
+  error
 }
 
 class Socials extends StatelessWidget {
@@ -45,35 +29,8 @@ class Socials extends StatelessWidget {
         SocialButton(url: 'https://www.linkedin.com/in/ryan-dodd-171a30249/', icon: FontAwesomeIcons.linkedinIn, tooltip: "LinkedIn"),
         SocialButton(url: 'https://github.com/Conmmander', icon: FontAwesomeIcons.github, tooltip: "GitHub"),
         SocialButton(url: 'mailto:ryan@ryandodd.org', icon: FontAwesomeIcons.google, tooltip: "ryan@ryandodd.org"),
-        SocialButton(url: 'tel:+18473404582', icon: FontAwesomeIcons.phone, tooltip: "(847) 340 - 4582")
+        SocialButton(url: 'tel:+18473404582', icon: Icons.phone, tooltip: "(847) 340 - 4582")
       ]
-    );
-  }
-}
-
-class NavigationButton extends StatelessWidget {
-  const NavigationButton({super.key, required this.label, required this.route, required this.icon});
-
-  final String label;
-  final String route;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-
-    return TextButton.icon(
-      onPressed: () {
-        context.go(route);
-      },
-      label: Text(label,
-        style: TextStyle(
-          color: theme.colorScheme.inversePrimary,
-        ),
-      ),
-      icon: Icon(icon,
-        color: theme.colorScheme.inversePrimary
-      )
     );
   }
 }
@@ -81,7 +38,22 @@ class NavigationButton extends StatelessWidget {
 class Navigation extends StatelessWidget {
   const Navigation({super.key, required this.page});
 
-  final Widget page;
+  final NavigationLocation page;
+
+  Widget currentPage() {
+    switch (page) {
+      case NavigationLocation.home:
+        return const Home();
+      case NavigationLocation.about:
+        return const About();
+      case NavigationLocation.experience:
+        return const Experience();
+      case NavigationLocation.skills:
+        return const Skills();
+      case NavigationLocation.error:
+        return const ErrorPage();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +101,7 @@ class Navigation extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            page,
+            currentPage(),
             const Align(
               alignment: Alignment.bottomCenter,
               child: Padding(

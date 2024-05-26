@@ -3,12 +3,6 @@ import 'package:go_router/go_router.dart';
 
 import './widgets/navigation.dart';
 
-import './pages/home.dart';
-import './pages/about.dart';
-import './pages/experience.dart';
-import './pages/skills.dart';
-import './pages/error.dart';
-
 final GoRouter _router = GoRouter(
   initialLocation: "/",
   onException: (BuildContext context, GoRouterState state, GoRouter goRouter) {
@@ -18,31 +12,31 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
-        return const Navigation(page: Home());
+        return const Navigation(page: NavigationLocation.home);
       },
     ),
     GoRoute(
       path: '/about',
       builder: (BuildContext context, GoRouterState state) {
-        return const Navigation(page: About());
+        return const Navigation(page: NavigationLocation.about);
       },
     ),
     GoRoute(
       path: '/experience',
       builder: (BuildContext context, GoRouterState state) {
-        return const Navigation(page: Experience());
+        return const Navigation(page: NavigationLocation.experience);
       },
     ),
     GoRoute(
       path: '/skills',
       builder: (BuildContext context, GoRouterState state) {
-        return const Navigation(page: Skills());
+        return const Navigation(page: NavigationLocation.skills);
       },
     ),
     GoRoute(
       path: '/error',
       builder: (BuildContext context, GoRouterState state) {
-        return const Navigation(page: ErrorPage());
+        return const Navigation(page: NavigationLocation.error);
       },
     ),
   ]
@@ -54,7 +48,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(

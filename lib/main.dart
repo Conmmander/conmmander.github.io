@@ -10,41 +10,40 @@ import './pages/skills.dart';
 import './pages/error.dart';
 
 final GoRouter _router = GoRouter(
+  initialLocation: "/",
   onException: (BuildContext context, GoRouterState state, GoRouter goRouter) {
     context.go("/error");
   },
-  routes: <RouteBase>[
+  routes: <GoRoute>[
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
         return const Navigation(page: Home());
       },
-      routes: <GoRoute>[
-        GoRoute(
-          path: 'about',
-          builder: (BuildContext context, GoRouterState state) {
-            return const Navigation(page: About());
-          },
-        ),
-        GoRoute(
-          path: 'experience',
-          builder: (BuildContext context, GoRouterState state) {
-            return const Navigation(page: Experience());
-          },
-        ),
-        GoRoute(
-          path: 'skills',
-          builder: (BuildContext context, GoRouterState state) {
-            return const Navigation(page: Skills());
-          },
-        ),
-        GoRoute(
-          path: 'error',
-          builder: (BuildContext context, GoRouterState state) {
-            return const Navigation(page: ErrorPage());
-          },
-        ),
-      ],
+    ),
+    GoRoute(
+      path: '/about',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Navigation(page: About());
+      },
+    ),
+    GoRoute(
+      path: '/experience',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Navigation(page: Experience());
+      },
+    ),
+    GoRoute(
+      path: '/skills',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Navigation(page: Skills());
+      },
+    ),
+    GoRoute(
+      path: '/error',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Navigation(page: ErrorPage());
+      },
     ),
   ]
 );

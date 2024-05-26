@@ -7,19 +7,19 @@ import './pages/home.dart';
 import './pages/about.dart';
 import './pages/experience.dart';
 import './pages/skills.dart';
-
-void main() {
-  runApp(const MyApp());
-}
+import './pages/error.dart';
 
 final GoRouter _router = GoRouter(
+  onException: (BuildContext context, GoRouterState state, GoRouter goRouter) {
+    context.go("/error");
+  },
   routes: <RouteBase>[
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
         return const Navigation(page: Home());
       },
-      routes: <RouteBase>[
+      routes: <GoRoute>[
         GoRoute(
           path: 'about',
           builder: (BuildContext context, GoRouterState state) {
@@ -38,10 +38,19 @@ final GoRouter _router = GoRouter(
             return const Navigation(page: Skills());
           },
         ),
+        GoRoute(
+          path: 'error',
+          builder: (BuildContext context, GoRouterState state) {
+            return const Navigation(page: ErrorPage());
+          },
+        ),
       ],
     ),
   ]
 );
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

@@ -64,7 +64,7 @@ class NavigationButton extends StatelessWidget {
 
     return TextButton.icon(
       onPressed: () {
-        context.push(route);
+        context.go(route);
       },
       label: Text(label,
         style: TextStyle(

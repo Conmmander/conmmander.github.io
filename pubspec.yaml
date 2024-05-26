@@ -65,7 +65,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   # Programming toolkit languages here: https://github.com/devicons/devicon/blob/master/icons
   assets:
-    - assets/img/personal/me.jpeg
+    - assets/img/personal/
     - assets/certs/java_basic.png
     - assets/img/icons/
     - assets/img/experience_logos/

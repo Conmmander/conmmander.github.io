@@ -9,163 +9,52 @@ class About extends StatelessWidget {
 
     return Scaffold(
       body: Center(
-        child: ListView(
-          padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Card(
-              shadowColor: theme.colorScheme.shadow,
-              color: theme.colorScheme.tertiaryContainer,
-              margin: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text('Education',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: theme.colorScheme.onTertiaryContainer
-                          ),
-                          textAlign: TextAlign.right,
-                        ),
-                      ),
-                    ]
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    maxWidth: 500
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Bradley University Class of 2026"),
+                  child: Text("I'm a programmer, working on my Bachelor of Science in Computer Science. I've been programming in my free time since at least 2017, gradually learning new skills and tools.\n\nIn addition to my love of programming, I am pursuing a minor in mathematics and music, which aligns with my love of knowledge and my passion for the cello.\n\nWhen I have spare time, you might find me rock climbing, camping, or researching another new programming topic/technique. I'm also heavily involved in Scouting America (formerly the Boy Scouts of America), and owe a lot of my personal development to them.\n\nIf you want to talk about any of my skills, experiences, or anything else, feel free to send me a message via one of the links below.",
+                    softWrap: true,
+                    style: TextStyle(
+                      color: theme.colorScheme.onPrimary
+                    )
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Bachelor of Science in Computer Science"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Minor in Mathematics"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Minor in Music"),
-                  ),
-                ]
-              )
+                ),
+              ]
             ),
-            Card(
-              shadowColor: theme.colorScheme.shadow,
-              color: theme.colorScheme.tertiaryContainer,
-              margin: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text('Personal',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: theme.colorScheme.onTertiaryContainer
-                      ),
-                      textAlign: TextAlign.right,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(100.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: theme.colorScheme.shadow,
+                          blurRadius: 4.0,
+                          spreadRadius: 1.0,
+                          offset: const Offset(0, 0)
+                        )
+                      ],
+                      shape: BoxShape.circle
+                    ),
+                    clipBehavior: Clip.hardEdge,
+                    child: Image.asset('assets/img/personal/chicago-me.jpg',
+                      width: 400,
+                      height: 400,
+                      fit: BoxFit.cover
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("In my free time, I enjoy playing the cello, reading Sci-Fi, playing video games, and programming. I also love the outdoors, and often go camping."),
-                  ),
-                ]
-              )
+                )
+              ]
             ),
-            Card(
-              shadowColor: theme.colorScheme.shadow,
-              color: theme.colorScheme.tertiaryContainer,
-              margin: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text('Extra Curriculars',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: theme.colorScheme.onTertiaryContainer
-                      ),
-                      textAlign: TextAlign.right,
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Student Senate Parliamentarian - Present"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Student Senate Campus Affairs Chairperson - 2023"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Bradley ACM Vice President - Present"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Scouting America, Venturing - Present"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Bradley University Rock Climbing Club Member - Present"),
-                  ),
-                ]
-              )
-            ),
-            Card(
-              shadowColor: theme.colorScheme.shadow,
-              color: theme.colorScheme.tertiaryContainer,
-              margin: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text('Awards',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: theme.colorScheme.onTertiaryContainer
-                      ),
-                      textAlign: TextAlign.right,
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Eagle Scout"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Illinois Seal of Commendation in Spanish"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Order of the Arrow - Vigil Honor"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Order of the Arrow - Founder's Award"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Order of the Arrow - R.D. Dunkin Leadership in Service Award"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("Territory Venturing Leadership Award"),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text("3 time Bradley Dean's List Recipient"),
-                  ),
-                ]
-              )
-            )
           ],
         ),
       ),

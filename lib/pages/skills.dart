@@ -85,6 +85,7 @@ class Skills extends StatelessWidget {
               SkillsBox(imgLocation: "assets/img/icons/html5-original.svg", tooltip: "HTML"),
               SkillsBox(imgLocation: "assets/img/icons/cplusplus-original.svg", tooltip: "C++"),
               SkillsBox(imgLocation: "assets/img/icons/csharp-original.svg", tooltip: "C#"),
+              SkillsBox(imgLocation: "assets/img/icons/typo3-original.svg", tooltip: "TypeScript"),
             ]
           ),
           Padding(
@@ -105,6 +106,7 @@ class Skills extends StatelessWidget {
               SkillsBox(imgLocation: "assets/img/icons/intellij-original.svg", tooltip: "Intellij"),
               SkillsBox(imgLocation: "assets/img/icons/eclipse-original.svg", tooltip: "Eclipse"),
               SkillsBox(imgLocation: "assets/img/icons/unity-original.svg", tooltip: "Unity"),
+              SkillsBox(imgLocation: "assets/img/icons/clion-original.svg", tooltip: "CLion"),
             ]
           ),
           Padding(
@@ -130,6 +132,10 @@ class Skills extends StatelessWidget {
               SkillsBox(imgLocation: "assets/img/icons/react-original.svg", tooltip: "React"),
               SkillsBox(imgLocation: "assets/img/icons/markdown-original.svg", tooltip: "Markdown"),
               SkillsBox(imgLocation: "assets/img/icons/cloudflare-original.svg", tooltip: "Cloudflare"),
+              SkillsBox(imgLocation: "assets/img/icons/sqlite-original.svg", tooltip: "SQLite"),
+              SkillsBox(imgLocation: "assets/img/icons/ssh-original.svg", tooltip: "SSH"),
+              SkillsBox(imgLocation: "assets/img/icons/trello-original.svg", tooltip: "Trello"),
+              SkillsBox(imgLocation: "assets/img/icons/digitalocean-original.svg", tooltip: "Digital Ocean"),
             ]
           ),
         ]

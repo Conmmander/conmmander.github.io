@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 import './widgets/navigation.dart';
 
@@ -42,6 +43,7 @@ final GoRouter _router = GoRouter(
   ]
 );
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 

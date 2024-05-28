@@ -1,5 +1,7 @@
 name: portfolio_site
 description: "Portfolio Website for Ryan Dodd"
+repository: "https://github.com/Conmmander/conmmander.github.io"
+
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -27,6 +29,10 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
+
+platforms:
+  web:
+
 dependencies:
   flutter:
     sdk: flutter

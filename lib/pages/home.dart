@@ -9,6 +9,8 @@ class Home extends StatelessWidget {
     MediaQueryData queryData = MediaQuery.of(context);
     bool mobilePlatform = queryData.size.width >= 600 ? false : true;
 
+    // Implement media queries to adjust the layout for mobile platforms
+
     if (!mobilePlatform) {
       return Scaffold(
         body: Center(

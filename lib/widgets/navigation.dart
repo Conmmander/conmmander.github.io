@@ -5,6 +5,7 @@ import '../pages/home.dart';
 import '../pages/about.dart';
 import '../pages/experience.dart';
 import '../pages/skills.dart';
+import '../pages/posts.dart';
 import '../pages/error.dart';
 
 import 'social_button.dart';
@@ -15,6 +16,7 @@ enum NavigationLocation {
   about,
   experience,
   skills,
+  posts,
   error
 }
 
@@ -50,6 +52,8 @@ class Navigation extends StatelessWidget {
         return const Experience();
       case NavigationLocation.skills:
         return const Skills();
+      case NavigationLocation.posts:
+        return const Posts();
       case NavigationLocation.error:
         return const ErrorPage();
     }
@@ -77,16 +81,17 @@ class Navigation extends StatelessWidget {
                 )
               ),
             ),
-            const NavigationButton(label: "Home", route: "/", icon: Icons.home),
-            const NavigationButton(label: "About", route: "/about", icon: Icons.person),
-            const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist),
-            const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code),
+            const NavigationButton(label: "Home", route: "/", icon: Icons.home_outlined, tip: "Home page"),
+            const NavigationButton(label: "About", route: "/about", icon: Icons.person_outlined, tip: "Details about Ryan"),
+            const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist_outlined, tip: "Work experience"),
+            const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code_outlined, tip: "Ryan's skills"),
+            const NavigationButton(label: "Posts", route: "/posts", icon: Icons.book_outlined, tip: "Articles, tutorials, and projects."),
           ]
         ),
       ) : null,
       appBar: AppBar(
         iconTheme: IconThemeData(color: theme.colorScheme.inversePrimary),
-        backgroundColor: theme.colorScheme.onSurface,
+        backgroundColor: theme.colorScheme.primary,
         elevation: 5,
         shadowColor: theme.colorScheme.shadow,
         centerTitle: true,
@@ -107,24 +112,25 @@ class Navigation extends StatelessWidget {
                 right: 15
               )
             ),
-            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Home", route: "/", icon: Icons.home)),
-            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "About", route: "/about", icon: Icons.person)),
-            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist)),
-            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code)),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Home", route: "/", icon: Icons.home_outlined, tip: "Home page")),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "About", route: "/about", icon: Icons.person_outlined, tip: "Details about Ryan")),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist_outlined, tip: "Work experience")),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code_outlined, tip: "Ryan's skills")),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Posts", route: "/posts", icon: Icons.book_outlined, tip: "Articles, tutorials, and projects.")),
           ]
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: const Alignment(0, 0),
-            end: const Alignment(1, 1),
+            begin: Alignment(0, 0),
+            end: Alignment(1, 1),
             colors: [
-              theme.colorScheme.tertiary,
-              theme.colorScheme.secondary,
-              theme.colorScheme.primary,
+              Color(0xFF136F63),
+              Color(0xFFBEE3DB),
+              Color(0xFFFAF9F9),
             ],
-            stops: const [0.0, 0.5, 1.0]
+            stops: [0.0, 0.5, 1.0]
           ),
         ),
         child: Stack(

@@ -42,13 +42,6 @@ final GoRouter _router = GoRouter(
         return const Navigation(page: NavigationLocation.posts);
       },
     ),
-    GoRoute(
-      path: '/robots.txt',
-      builder: (BuildContext context, GoRouterState state) {
-
-        return const Navigation(page: NavigationLocation.posts);
-      },
-    )
   ]
 );
 void main() {

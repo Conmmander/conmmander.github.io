@@ -43,7 +43,9 @@ jobs:
 
       - run: |
           cd build/web
-          assets/web/CNAME .
+          mv assets/web/CNAME .
+          mv assets/web/ROBOTS.txt .
+          mv assets/web/sitemap.xml .
           git init 
           git config --global user.email ryandodd0115@gmail.com
           git config --global user.name Conmmander

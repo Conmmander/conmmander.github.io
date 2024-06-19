@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:seo/seo.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

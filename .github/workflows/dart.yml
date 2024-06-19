@@ -51,5 +51,5 @@ jobs:
           git checkout -b web
           git add --all
           git commit -m "Page update"
-          git push origin web -
+          git push origin web -f
         

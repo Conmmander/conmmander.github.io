@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 
 import './widgets/navigation.dart';
+import './widgets/site_theme.dart';
 
 final GoRouter _router = GoRouter(
   initialLocation: "/",
@@ -60,13 +61,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Ryan\'s Portfolio Site',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 113, 206)),
-        //https://rxlabz.github.io/panache/#/editor
-        useMaterial3: true,
-        scaffoldBackgroundColor: Colors.transparent
-      ),
-
+      theme: siteTheme,
       routerConfig: _router,
     );
   }

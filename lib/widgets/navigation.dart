@@ -91,7 +91,7 @@ class Navigation extends StatelessWidget {
       ) : null,
       appBar: AppBar(
         iconTheme: IconThemeData(color: theme.colorScheme.inversePrimary),
-        backgroundColor: theme.colorScheme.onSurface,
+        backgroundColor: theme.colorScheme.primary,
         elevation: 5,
         shadowColor: theme.colorScheme.shadow,
         centerTitle: true,
@@ -126,9 +126,9 @@ class Navigation extends StatelessWidget {
             begin: const Alignment(0, 0),
             end: const Alignment(1, 1),
             colors: [
-              theme.colorScheme.tertiary,
-              theme.colorScheme.secondary,
-              theme.colorScheme.primary,
+              Color(0xFF136F63),
+              Color(0xFFBEE3DB),
+              Color(0xFFFAF9F9),
             ],
             stops: const [0.0, 0.5, 1.0]
           ),

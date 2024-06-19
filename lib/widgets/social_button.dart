@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:seo/seo.dart';
 
 class SocialButton extends StatelessWidget {
   const SocialButton({super.key, required this.url, required this.icon, required this.tooltip});
@@ -15,18 +16,22 @@ class SocialButton extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.all(4.0),
-      child: FloatingActionButton.small(
-        heroTag: tooltip,
-        backgroundColor: theme.colorScheme.primary,
-        tooltip: tooltip,
-        onPressed: () {
-          launchUrl(Uri.parse(url),
-            mode: LaunchMode.externalApplication
-          );
-        },
-        shape: const CircleBorder(),
-        child: FaIcon(icon,
-          color: theme.colorScheme.onPrimary
+      child: Seo.link(
+        href: url,
+        anchor: tooltip,
+        child: FloatingActionButton.small(
+          heroTag: tooltip,
+          backgroundColor: theme.colorScheme.primary,
+          tooltip: tooltip,
+          onPressed: () {
+            launchUrl(Uri.parse(url),
+              mode: LaunchMode.externalApplication
+            );
+          },
+          shape: const CircleBorder(),
+          child: FaIcon(icon,
+            color: theme.colorScheme.onPrimary
+          ),
         ),
       ),
     );

@@ -78,6 +78,7 @@ flutter:
     - assets/certs/java_basic.png
     - assets/img/icons/
     - assets/img/experience_logos/
+    - assets/web/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

@@ -121,16 +121,16 @@ class Navigation extends StatelessWidget {
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: const Alignment(0, 0),
-            end: const Alignment(1, 1),
+            begin: Alignment(0, 0),
+            end: Alignment(1, 1),
             colors: [
               Color(0xFF136F63),
               Color(0xFFBEE3DB),
               Color(0xFFFAF9F9),
             ],
-            stops: const [0.0, 0.5, 1.0]
+            stops: [0.0, 0.5, 1.0]
           ),
         ),
         child: Stack(

@@ -5,6 +5,7 @@ import '../pages/home.dart';
 import '../pages/about.dart';
 import '../pages/experience.dart';
 import '../pages/skills.dart';
+import '../pages/posts.dart';
 import '../pages/error.dart';
 
 import 'social_button.dart';
@@ -15,6 +16,7 @@ enum NavigationLocation {
   about,
   experience,
   skills,
+  posts,
   error
 }
 
@@ -50,6 +52,8 @@ class Navigation extends StatelessWidget {
         return const Experience();
       case NavigationLocation.skills:
         return const Skills();
+      case NavigationLocation.posts:
+        return const Posts();
       case NavigationLocation.error:
         return const ErrorPage();
     }
@@ -77,10 +81,11 @@ class Navigation extends StatelessWidget {
                 )
               ),
             ),
-            const NavigationButton(label: "Home", route: "/", icon: Icons.home),
-            const NavigationButton(label: "About", route: "/about", icon: Icons.person),
-            const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist),
-            const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code),
+            const NavigationButton(label: "Home", route: "/", icon: Icons.home_outlined),
+            const NavigationButton(label: "About", route: "/about", icon: Icons.person_outlined),
+            const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist_outlined),
+            const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code_outlined),
+            const NavigationButton(label: "Posts", route: "/posts", icon: Icons.book_outlined),
           ]
         ),
       ) : null,
@@ -107,10 +112,11 @@ class Navigation extends StatelessWidget {
                 right: 15
               )
             ),
-            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Home", route: "/", icon: Icons.home)),
-            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "About", route: "/about", icon: Icons.person)),
-            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist)),
-            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code)),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Home", route: "/", icon: Icons.home_outlined)),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "About", route: "/about", icon: Icons.person_outlined)),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Experience", route: "/experience", icon: Icons.checklist_outlined)),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Skills", route: "/skills", icon: Icons.code_outlined)),
+            Visibility(visible: !mobilePlatform, child: const NavigationButton(label: "Posts", route: "/posts", icon: Icons.book_outlined)),
           ]
         ),
       ),

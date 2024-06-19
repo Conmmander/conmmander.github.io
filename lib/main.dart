@@ -35,6 +35,12 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
+      path: '/posts',
+      builder: (BuildContext context, GoRouterState state) {
+        return const Navigation(page: NavigationLocation.posts);
+      },
+    ),
+    GoRoute(
       path: '/error',
       builder: (BuildContext context, GoRouterState state) {
         return const Navigation(page: NavigationLocation.error);
@@ -55,7 +61,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Ryan\'s Portfolio Site',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 2, 96, 173)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 113, 206)),
+        //https://rxlabz.github.io/panache/#/editor
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.transparent
       ),

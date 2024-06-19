@@ -4,6 +4,7 @@
         "github.copilot",
         "helgardrichard.helium-icon-theme",
         "ms-vsliveshare.vsliveshare",
-        "vishwar.mdsnippets"
+        "vishwar.mdsnippets",
+        "github.vscode-github-actions"
     ]
 }

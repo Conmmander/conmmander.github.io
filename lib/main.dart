@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:seo/seo.dart';
 
 import './widgets/navigation.dart';
 import './widgets/site_theme.dart';
 
 final GoRouter _router = GoRouter(
   initialLocation: "/",
-  onException: (BuildContext context, GoRouterState state, GoRouter goRouter) {
-    context.go("/error");
+  errorBuilder: (BuildContext context, GoRouterState state) {
+    return const Navigation(page: NavigationLocation.error);
   },
   routes: <GoRoute>[
     GoRoute(
@@ -42,11 +43,12 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/error',
+      path: '/robots.txt',
       builder: (BuildContext context, GoRouterState state) {
-        return const Navigation(page: NavigationLocation.error);
+
+        return const Navigation(page: NavigationLocation.posts);
       },
-    ),
+    )
   ]
 );
 void main() {
@@ -59,10 +61,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Ryan\'s Portfolio Site',
-      theme: siteTheme,
-      routerConfig: _router,
+    return SeoController(
+      enabled: true,
+      tree: WidgetTree(context: context),
+      child: MaterialApp.router(
+        title: 'Ryan\'s Portfolio Site',
+        theme: siteTheme,
+        routerConfig: _router,
+      ),
     );
   }
 }

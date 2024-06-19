@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seo/seo.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -8,6 +9,8 @@ class Home extends StatelessWidget {
     ThemeData theme = Theme.of(context);
     MediaQueryData queryData = MediaQuery.of(context);
     bool mobilePlatform = queryData.size.width >= 600 ? false : true;
+
+    // Implement media queries to adjust the layout for mobile platforms
 
     if (!mobilePlatform) {
       return Scaffold(

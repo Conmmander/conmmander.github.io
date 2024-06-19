@@ -1,16 +1,23 @@
-# portfolio_site
+# Ryan's Portfolio Website
 
-A new Flutter project.
+A website dedicated to showcase Ryan's adventures in programming
 
-## Getting Started
+## Why Open Source?
 
-This project is a starting point for a Flutter application.
+This project is open sourced for a few reasons.
 
-A few resources to get you started if this is your first Flutter project:
+1. There is nothing sensative about sharing the knowledge of creating websites
+2. I firmly believe that being transparent is important, and this is my way to doing so
+3. Many resources for flutter exist, and it is my hope that this may one day be someone elses resource
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Can I use this code?
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Absolutely! All I ask is that you credit me somewhere if you use my repository.
+
+## What's under the hood?
+
+At this websites core, everything is written in Flutter. Flutter was used because while I am capable of web development in HTML/CSS/JS, I feel that Flutter is more versatile and made it rather easy for me to make small changes. I'm also colorblind, so creating my own color scheme was the absolute bane of my existance, and flutter takes care of most of that for me.
+
+## Can I contribute?
+
+Sure! I'm not sure why you might want to contribute, but I would appreciate any suggestions or thoughts you have!

@@ -31,7 +31,8 @@ class Socials extends StatelessWidget {
         SocialButton(url: 'https://www.linkedin.com/in/ryan-dodd-171a30249/', icon: FontAwesomeIcons.linkedinIn, tooltip: "LinkedIn"),
         SocialButton(url: 'https://github.com/Conmmander', icon: FontAwesomeIcons.github, tooltip: "GitHub"),
         SocialButton(url: 'mailto:ryan@ryandodd.org', icon: FontAwesomeIcons.google, tooltip: "ryan@ryandodd.org"),
-        SocialButton(url: 'tel:+18473404582', icon: Icons.phone, tooltip: "(847) 340 - 4582")
+        SocialButton(url: 'tel:+18473404582', icon: Icons.phone, tooltip: "(847) 340 - 4582"),
+        SocialButton(url: 'https://ryandodd.org/Dodd_Ryan_Resume.pdf', icon: Icons.book, tooltip: "Resume")
       ]
     );
   }

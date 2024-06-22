@@ -45,6 +45,7 @@ jobs:
           mv assets/assets/web/CNAME .
           mv assets/assets/web/robots.txt .
           mv assets/assets/web/sitemap.xml .
+          mv assets/assets/pdf/Dodd_Ryan_Resume.pdf .
           git init 
           git config --global user.email ryandodd0115@gmail.com
           git config --global user.name Conmmander
